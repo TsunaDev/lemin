@@ -1,17 +1,17 @@
 /*
 ** get_next_line.c for get_next_line.c in /home/gaby/projet_Epitech/CPE/CPE_2016_getnextline
-**
+** 
 ** Made by Irakiz_g
 ** Login   <glenn-gabriel.irakiza@epitech.eu@epitech.net>
-**
+** 
 ** Started on  Thu Jan  5 12:46:50 2017 Irakiz_g
-** Last update Tue Apr  4 14:22:55 2017 Glenn Gabriel Irakiza
+** Last update Sat Mar 25 17:55:36 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>
 #include	<unistd.h>
 #include	"get_next_line.h"
-#include	"lib.h"
+#include	"my_string.h"
 
 static char	*my_realloc_strcat(char *src, char *dest)
 {

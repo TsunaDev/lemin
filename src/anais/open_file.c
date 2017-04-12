@@ -5,23 +5,19 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Tue Apr  4 17:12:19 2017 anaisbrnt
-** Last update Tue Apr  4 14:43:01 2017 Glenn Gabriel Irakiza
+** Last update Mon Apr 10 14:27:35 2017 Glenn Gabriel Irakiza
 */
 
 #include	<unistd.h>
-#include	<stdlib.h>
-#include	<fcntl.h>
-#include	"lib.h"
+#include	"my_string.h"
 #include	"get_next_line.h"
 
-char		**open_file(char *name_file)
+char		**open_file(int fd)
 {
   char		**arr;
   char		*gnl;
   char		*cat;
-  int		fd;
 
-  fd = open(name_file, O_RDONLY);
   if (fd == -1)
     return (NULL);
   gnl = get_next_line(fd);
@@ -39,17 +35,4 @@ char		**open_file(char *name_file)
   arr = my_strnchar_to_wordtab(cat, '\n');
   free(cat);
   return (arr);
-}
-
-int		main(int ac, char **av)
-{
-  char		**arr;
-
-  arr = open_file(av[1]);
-  for (int i = 0; arr[i] != NULL; i++)
-    printf("%s\n", arr[i]);
-  for (int i = 0; arr[i] != NULL; i++)
-    free(arr[i]);
-  free(arr);
-  return (0);
 }

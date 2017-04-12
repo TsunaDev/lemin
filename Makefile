@@ -5,33 +5,35 @@
 ## Login   <anais.breant@epitech.eu>
 ## 
 ## Started on  Tue Apr  4 17:10:32 2017 anaisbrnt
-## Last update Tue Apr  4 14:40:21 2017 Glenn Gabriel Irakiza
+## Last update Mon Apr 10 14:27:05 2017 Glenn Gabriel Irakiza
 ##
 
 NAME	=	lem_in
 
 CC	=	gcc -o
 
-CFLAGS	= -W -Wall -Wextra
+CFLAGS	= -W -Wall -Wextra -g
 CFLAGS	+= -Iinclude
 
 SRCS	=	src/anais/open_file.c			\
-		src/lib/my_strcat.c			\
-		src/lib/my_strlen.c			\
-		src/lib/get_next_line.c			\
-		src/lib/my_strnchar_to_wordtab.c	\
+		src/anais/main.c
 
 OBJS	=	$(SRCS:.c=.o)
+
+LDFLAGS	=	-Lsrc/lib_string -lstr
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(NAME) $(OBJS)
+	make -C src/lib_string
+	$(CC) $(NAME) $(OBJS) $(LDFLAGS)
 
 clean:
+	make -C src/lib_string clean
 	rm -rf $(OBJS)
 
 fclean: clean
+	make -C src/lib_string fclean
 	rm -rf $(NAME)
 
 re: fclean all

@@ -5,11 +5,11 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu@epitech.net>
 **
 ** Started on  Thu Dec  1 10:52:14 2016 Irakiz_g
-** Last update Tue Apr  4 14:23:35 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr  2 15:45:02 2017 Quentin Le Bars
 */
 
 #include	<stdlib.h>
-#include	"lib.h"
+#include	"my_string.h"
 
 static int	my_cpy(char *src, char *new, int i)
 {

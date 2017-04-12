@@ -1,12 +1,14 @@
 /*
 ** my_strlen.c for my_strlen.c in /home/gaby/projet_Epitech/CPE/CPE_2016_corewar/asm_corewar/lib_string
-**
+** 
 ** Made by Glenn Gabriel Irakiza
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
-**
+** 
 ** Started on  Sat Mar 25 16:36:59 2017 Glenn Gabriel Irakiza
-** Last update Tue Apr  4 17:17:55 2017 anaisbrnt
+** Last update Fri Mar 31 13:48:36 2017 Glenn Gabriel Irakiza
 */
+
+#include	<stdlib.h>
 
 int		my_strlen(char *str)
 {
