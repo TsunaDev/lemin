@@ -5,7 +5,7 @@
 ## Login   <anais.breant@epitech.eu>
 ## 
 ## Started on  Tue Apr  4 17:10:32 2017 anaisbrnt
-## Last update Wed Apr 12 11:29:02 2017 Glenn Gabriel Irakiza
+## Last update Wed Apr 12 15:26:13 2017 Glenn Gabriel Irakiza
 ##
 
 NAME	=	lem_in
@@ -17,6 +17,7 @@ CFLAGS	+=	-Iinclude
 
 SRCS	=	src/anais/open_file.c			\
 		src/anais/my_pars.c			\
+		src/anais/create_room.c			\
 		src/anais/main.c
 
 OBJS	=	$(SRCS:.c=.o)

@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
 ** Started on  Mon Apr 10 14:25:21 2017 Glenn Gabriel Irakiza
-** Last update Wed Apr 12 11:39:00 2017 Glenn Gabriel Irakiza
+** Last update Wed Apr 12 15:25:44 2017 Glenn Gabriel Irakiza
 */
 
 #ifndef	LEMIN_H_
@@ -23,6 +23,7 @@ typedef struct		s_room
 /*struct s_room		*previous;*/
 
 char			**open_file(int);
+int			my_recup_room(char **);
 int			my_pars(char **);
 
 # endif	/* !LEMIN_H_ */
