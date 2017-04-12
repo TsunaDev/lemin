@@ -5,12 +5,24 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
 ** Started on  Mon Apr 10 14:25:21 2017 Glenn Gabriel Irakiza
-** Last update Mon Apr 10 14:26:14 2017 Glenn Gabriel Irakiza
+** Last update Wed Apr 12 11:39:00 2017 Glenn Gabriel Irakiza
 */
 
 #ifndef	LEMIN_H_
 # define LEMIN_H_
 
-char	**open_file(int);
+typedef struct		s_room
+{
+  char			*name;
+  int			x;
+  int			y;
+}			t_room;
+
+/*struct s_room		*connect;*/
+/*struct s_room		*next;*/
+/*struct s_room		*previous;*/
+
+char			**open_file(int);
+int			my_pars(char **);
 
 # endif	/* !LEMIN_H_ */
