@@ -5,7 +5,7 @@
 ## Login   <anais.breant@epitech.eu>
 ## 
 ## Started on  Tue Apr  4 17:10:32 2017 anaisbrnt
-## Last update Wed Apr 12 15:26:13 2017 Glenn Gabriel Irakiza
+## Last update Thu Apr 13 15:01:09 2017 Anaïs Breant
 ##
 
 NAME	=	lem_in
@@ -18,7 +18,12 @@ CFLAGS	+=	-Iinclude
 SRCS	=	src/anais/open_file.c			\
 		src/anais/my_pars.c			\
 		src/anais/create_room.c			\
-		src/anais/main.c
+		src/anais/main.c			\
+		src/anais/check_file.c			\
+		src/anais/check_nbr_ants.c		\
+		src/anais/check_start_end.c		\
+		src/anais/skip_bad_line.c		\
+		src/anais/epur_str_check.c		\
 
 OBJS	=	$(SRCS:.c=.o)
 
