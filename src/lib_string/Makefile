@@ -5,7 +5,7 @@
 ## Login   <irakiz_g@epitech.net>
 ## 
 ## Started on  Mon Nov  7 10:40:19 2016 gabriel irakiza
-## Last update Mon Apr 10 13:58:12 2017 Glenn Gabriel Irakiza
+## Last update Wed Apr 12 16:00:54 2017 Glenn Gabriel Irakiza
 ##
 
 NAME	=	libstr.a
@@ -21,6 +21,7 @@ SRC	=	my_isnum.c				\
 		my_strcat.c				\
 		my_strdup.c				\
 		my_strndup.c				\
+		my_strndup_end_free.c			\
 		my_strndup_end.c			\
 		my_util_array.c				\
 		my_tabcpy.c				\

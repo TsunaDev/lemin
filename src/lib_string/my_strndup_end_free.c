@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
 ** Started on  Tue Feb 21 23:11:31 2017 Glenn Gabriel Irakiza
-** Last update Wed Apr 12 16:01:37 2017 Glenn Gabriel Irakiza
+** Last update Wed Apr 12 16:00:39 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdio.h>
@@ -44,7 +44,7 @@ static char	*my_strncpy_end(char *src, char *dest, int i, int e)
   return (dest);
 }
 
-char		*my_strndup_end(char *src, int i, int e)
+char		*my_strndup_end_free(char *src, int i, int e)
 {
   char		*str;
 
@@ -56,5 +56,6 @@ char		*my_strndup_end(char *src, int i, int e)
   if (str == NULL)
     return (NULL);
   str = my_strncpy_end(src, str, i, e);
+  free(src);
   return (str);
 }

@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
 ** Started on  Sun Mar 12 12:04:03 2017 Glenn Gabriel Irakiza
-** Last update Mon Apr 10 13:55:53 2017 Glenn Gabriel Irakiza
+** Last update Wed Apr 12 16:01:18 2017 Glenn Gabriel Irakiza
 */
 
 #ifndef	MY_STRING_H_
@@ -27,6 +27,7 @@ char		*my_strcpy(char *, char *);
 char		*my_strdup(char *);
 char		*my_strncpy(char *, char *, int);
 char		*my_strndup(char *, int);
+char		*my_strndup_end_free(char *, int, int);
 char		*my_strndup_end(char *, int, int);
 char		*my_cpyname(char *);
 char		*my_strcat(char *, char *, int);
