@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
 ** Started on  Mon Apr 10 14:25:21 2017 Glenn Gabriel Irakiza
-** Last update Wed Apr 12 16:15:57 2017 Glenn Gabriel Irakiza
+** Last update Fri Apr 14 09:05:29 2017 Glenn Gabriel Irakiza
 */
 
 #ifndef	LEMIN_H_
@@ -14,17 +14,22 @@
 typedef struct		s_room
 {
   char			*name;
+  int			type;
   int			x;
   int			y;
-  int			type;
 }			t_room;
 
-/*struct s_room		*connect;*/
-/*struct s_room		*next;*/
-/*struct s_room		*previous;*/
+void			my_free_room(t_room **);
+
+t_room			**my_recup_room(char **, int);
 
 char			**open_file(int);
-int			my_recup_room(char **);
 int			my_pars(char **);
+int			nb_room(char **);
+
+/*
+** fonction à supprimer avant le rendu
+*/
+void			my_show_room(t_room **);
 
 # endif	/* !LEMIN_H_ */
