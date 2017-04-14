@@ -5,20 +5,21 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 20:02:51 2017 Anaïs Breant
-** Last update Fri Apr 14 13:22:51 2017 Anaïs Breant
+** Last update Fri Apr 14 13:25:54 2017 Anaïs Breant
 */
 
 #include	<unistd.h>
 #include	"my_string.h"
 #include	"check_file.h"
 
-static char	*modif_str(char *str)
+static char	*modif_str(char **str)
 {
-  str = malloc(sizeof(char) * 1);
-  if (str == NULL)
+  free(*str);
+  (*str) = malloc(sizeof(char) * 1);
+  if (*str == NULL)
     return (NULL);
-  str[0] = '\0';
-  return (str);
+  (*str)[0] = '\0';
+  return (*str);
 }
 
 static int	check_str_connect(char *str)
@@ -75,7 +76,7 @@ char		**skip_bad_line(char **arr)
 	cpt++;
       else
 	{
-	  modif_str(arr[cpt]);
+	  modif_str(&arr[cpt]);
 	  cpt++;
 	}
     }
