@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Thu Apr 13 16:55:15 2017 Anaïs Breant
-** Last update Thu Apr 13 16:55:16 2017 Anaïs Breant
+** Last update Fri Apr 14 13:27:57 2017 Anaïs Breant
 */
 
 static char	*check_last_char(char *str)
@@ -16,7 +16,7 @@ static char	*check_last_char(char *str)
   while (str[cpt] != '\0')
     cpt++;
   cpt--;
-  if (str[cpt] == ' ')
+  if (cpt >= 0 && str[cpt] == ' ')
     str[cpt] = '\0';
   return (str);
 }
