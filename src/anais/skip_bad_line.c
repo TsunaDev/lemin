@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 20:02:51 2017 Anaïs Breant
-** Last update Thu Apr 13 15:01:50 2017 Anaïs Breant
+** Last update Fri Apr 14 13:22:51 2017 Anaïs Breant
 */
 
 #include	<unistd.h>
@@ -14,7 +14,6 @@
 
 static char	*modif_str(char *str)
 {
-  free(str);
   str = malloc(sizeof(char) * 1);
   if (str == NULL)
     return (NULL);
