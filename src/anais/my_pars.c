@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Tue Apr 18 13:15:51 2017 Anaïs Breant
+** Last update Tue Apr 18 09:35:18 2017 Glenn Gabriel Irakiza
 */
 
 #include	"check_file.h"
@@ -31,8 +31,7 @@ int		my_pars(char **arr)
 	}
       cpt++;
     }
-    /*ants = my_getnbr(arr[0]);
-  printf("%d\n", ants);
-  my_recup_room(arr);*/
+  printf("-------------GAB----------------------\n");
+  my_valid_room(arr);
   return (0);
 }
