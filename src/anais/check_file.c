@@ -5,20 +5,21 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 19:34:56 2017 Anaïs Breant
-** Last update Wed Apr 12 19:55:04 2017 Anaïs Breant
+** Last update Tue Apr 18 12:59:29 2017 Anaïs Breant
 */
 
+#include	<unistd.h>
 #include	"check_file.h"
 
-int		check_file(char **arr)
+char		**check_file(char **arr)
 {
   int		return_value;
 
   return_value = check_nbr_ants(arr[0]);
   if (return_value == -1)
-    return (-1);
-  return_value = check_start_end(arr);
-  if (return_value == -1)
-    return (-1);
-  return (0);
+    return (NULL);
+  arr = check_start_end(arr);
+  if (arr == NULL)
+    return (NULL);
+  return (arr);
 }

@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Thu Apr 13 14:53:02 2017 Anaïs Breant
+** Last update Tue Apr 18 13:15:51 2017 Anaïs Breant
 */
 
 #include	"check_file.h"
@@ -17,14 +17,18 @@ int		my_pars(char **arr)
   int		ants;
   int		return_value;
 
-  return_value = check_file(arr);
-  if (return_value == -1)
+  arr = check_file(arr);
+  if (arr == NULL)
     return (-1);
   arr = skip_bad_line(arr);
   cpt = 0;
   while (arr[cpt] != NULL)
     {
-      printf("%s\n", arr[cpt]);
+      if (arr[cpt][0] != '\0')
+	{
+	  my_putstr(1, arr[cpt]);
+	  my_putstr(1, "\n");
+	}
       cpt++;
     }
     /*ants = my_getnbr(arr[0]);

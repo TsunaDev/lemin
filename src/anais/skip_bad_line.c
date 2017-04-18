@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 20:02:51 2017 Anaïs Breant
-** Last update Fri Apr 14 13:25:54 2017 Anaïs Breant
+** Last update Tue Apr 18 13:12:57 2017 Anaïs Breant
 */
 
 #include	<unistd.h>
@@ -58,6 +58,22 @@ static int	check_str_room(char *str)
   return (1);
 }
 
+static char	*skip_comment(char *str)
+{
+  int		cpt;
+
+  cpt = 0;
+  while (str[cpt] != '\0')
+    {
+      if (cpt > 0 &&
+	  str[cpt] == '#' && str[cpt - 1] != '#' && str[cpt + 1] != '#')
+	str[cpt] = '\0';
+      else
+	cpt++;
+    }
+  return (str);
+}
+
 char		**skip_bad_line(char **arr)
 {
   int		cpt;
@@ -65,6 +81,7 @@ char		**skip_bad_line(char **arr)
   cpt = 1;
   while (arr[cpt] != NULL)
     {
+      arr[cpt] = skip_comment(arr[cpt]);
       arr[cpt] = epur_str_check(arr[cpt]);
       if ((my_strcmp(arr[cpt], "##start")) == 0)
 	cpt++;
