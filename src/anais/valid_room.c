@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
 ** Started on  Tue Apr 18 08:49:42 2017 Glenn Gabriel Irakiza
-** Last update Tue Apr 18 09:31:30 2017 Glenn Gabriel Irakiza
+** Last update Tue Apr 18 09:45:14 2017 Glenn Gabriel Irakiza
 */
 
 #include	"my_string.h"
@@ -56,19 +56,20 @@ static int	pos_error_room(char **arr)
 
 int		my_valid_room(char **arr)
 {
-  int		pos_error;
+  int		len;
   int		y;
 
-  y = 0;
-  pos_error = pos_error_room(arr);
-  if (pos_error != -1)
+  len = my_strlen_tab(arr);
+  y = pos_error_room(arr);
+  if (y != -1)
     {
-      while (y != pos_error)
+      free(arr[y]);
+      arr[y] = NULL;
+      while (y != len)
 	{
-	  printf("%d, %d\n", pos_error, y);
+	  free(arr[y]);
 	  y++;
 	}
     }
-  my_showtab(arr);
   return (0);
 }
