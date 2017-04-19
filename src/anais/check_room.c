@@ -5,12 +5,12 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 19:57:42 2017 Anaïs Breant
-** Last update Wed Apr 12 20:02:39 2017 Anaïs Breant
+** Last update Wed Apr 19 16:15:08 2017 Anaïs Breant
 */
 
-int		check_arr(char **arr)
+static char	**check_arr(char **arr)
 {
-
+  return (arr);
 }
 
 int		check_room(char **arr)

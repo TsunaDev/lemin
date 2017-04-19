@@ -5,7 +5,7 @@
 ## Login   <anais.breant@epitech.eu>
 ## 
 ## Started on  Tue Apr  4 17:10:32 2017 anaisbrnt
-## Last update Tue Apr 18 13:32:40 2017 Anaïs Breant
+## Last update Wed Apr 19 17:07:25 2017 Anaïs Breant
 ##
 
 NAME	=	lem_in
@@ -26,6 +26,7 @@ SRCS	=	src/anais/open_file.c			\
 		src/anais/skip_bad_line.c		\
 		src/anais/epur_str_check.c		\
 		src/anais/valid_room.c			\
+		src/anais/display_arr.c			\
 
 OBJS	=	$(SRCS:.c=.o)
 
