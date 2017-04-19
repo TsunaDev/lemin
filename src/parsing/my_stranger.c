@@ -1,11 +1,11 @@
 /*
 ** my_stranger.c for my_srtanger.c in /home/gaby/projet_Epitech/CPE/CPE_2016_Lemin/src/anais
-** 
+**
 ** Made by Glenn Gabriel Irakiza
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
-** 
+**
 ** Started on  Wed Apr 19 13:25:26 2017 Glenn Gabriel Irakiza
-** Last update Wed Apr 19 14:15:30 2017 Glenn Gabriel Irakiza
+** Last update Wed Apr 19 21:48:21 2017 Anaïs Breant
 */
 
 #include	"my_string.h"
@@ -45,5 +45,4 @@ void		my_stranger(char **arr)
   y = stranger_room(arr, '-', 2, y);
   if (y == -1)
     return ;
-  printf("2 : %s - %d\n", arr[y], y);
 }

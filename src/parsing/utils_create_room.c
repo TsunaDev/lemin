@@ -1,11 +1,11 @@
 /*
 ** my_pars.c for my_pars.c in /home/gaby/projet_Epitech/CPE/CPE_2016_Lemin/src/anais
-** 
+**
 ** Made by Glenn Gabriel Irakiza
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
-** 
+**
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Fri Apr 14 09:04:32 2017 Glenn Gabriel Irakiza
+** Last update Wed Apr 19 21:48:49 2017 Anaïs Breant
 */
 
 #include	"my_string.h"

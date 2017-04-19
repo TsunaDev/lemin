@@ -5,7 +5,7 @@
 ## Login   <anais.breant@epitech.eu>
 ## 
 ## Started on  Tue Apr  4 17:10:32 2017 anaisbrnt
-## Last update Wed Apr 19 20:28:16 2017 Anaïs Breant
+## Last update Wed Apr 19 21:47:59 2017 Anaïs Breant
 ##
 
 NAME	=	lem_in
@@ -15,20 +15,20 @@ CC	=	gcc -o
 CFLAGS	=	-W -Wall -Wextra -g
 CFLAGS	+=	-Iinclude
 
-SRCS	=	src/anais/open_file.c			\
-		src/anais/my_pars.c			\
-		src/anais/create_room.c			\
-		src/anais/utils_create_room.c		\
-		src/anais/main.c			\
-		src/anais/check_file.c			\
-		src/anais/check_nbr_ants.c		\
-		src/anais/check_start_end.c		\
-		src/anais/skip_bad_line.c		\
-		src/anais/epur_str_check.c		\
-		src/anais/valid_file.c			\
-		src/anais/my_stranger.c			\
-		src/anais/display_arr.c			\
-		src/anais/check_nbr_room.c		\
+SRCS	=	src/parsing/open_file.c			\
+		src/parsing/my_pars.c			\
+		src/parsing/create_room.c		\
+		src/parsing/utils_create_room.c		\
+		src/parsing/main.c			\
+		src/parsing/check_file.c		\
+		src/parsing/check_nbr_ants.c		\
+		src/parsing/check_start_end.c		\
+		src/parsing/skip_bad_line.c		\
+		src/parsing/epur_str_check.c		\
+		src/parsing/valid_file.c		\
+		src/parsing/my_stranger.c		\
+		src/parsing/display_arr.c		\
+		src/parsing/check_nbr_room.c		\
 
 OBJS	=	$(SRCS:.c=.o)
 
