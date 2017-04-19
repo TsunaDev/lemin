@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Wed Apr 19 21:01:33 2017 Anaïs Breant
+** Last update Wed Apr 19 19:29:10 2017 Glenn Gabriel Irakiza
 */
 
 #include	"my_string.h"
@@ -50,6 +50,7 @@ static t_room	*my_init_room(char *str, int type)
 t_room		**my_recup_room(char **arr)
 {
   t_room	**room;
+  int		len;
   int		size;
   int		nb_words;
   int		cmp;
@@ -67,6 +68,12 @@ t_room		**my_recup_room(char **arr)
       if (cmp == 0)
 	{
 	  y++;
+	  len = my_strlen(arr[y]);
+	  while (len == 0)
+	    {
+	      y++;
+	      len = my_strlen(arr[y]);
+	    }
 	  room[i] = my_init_room(arr[y], 0);
 	  i++;
 	}
@@ -74,6 +81,12 @@ t_room		**my_recup_room(char **arr)
       if (cmp == 0)
 	{
 	  y++;
+	  len = my_strlen(arr[y]);
+	  while (len == 0)
+	    {
+	      y++;
+	      len = my_strlen(arr[y]);
+	    }
 	  room[i] = my_init_room(arr[y], 2);
 	  i++;
 	}
