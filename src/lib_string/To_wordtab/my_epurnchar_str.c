@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
 ** Started on  Wed Apr  5 16:13:46 2017 Glenn Gabriel Irakiza
-** Last update Wed Apr  5 16:17:12 2017 Glenn Gabriel Irakiza
+** Last update Wed Apr 19 12:27:35 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>
@@ -61,7 +61,7 @@ char		*my_epurnchar_str(char *str, char c)
 
   if (str == NULL)
     return (NULL);
-  nb_words = my_nb_words_env(str, c, 0);
+  nb_words = my_nb_words_char(str, c, 0);
   nb_char = my_nbchar(str, c);
   new = malloc(sizeof(char) * (nb_char + nb_words + 3));
   if (new == NULL)

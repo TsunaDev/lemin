@@ -5,7 +5,7 @@
 ## Login   <anais.breant@epitech.eu>
 ## 
 ## Started on  Tue Apr  4 17:10:32 2017 anaisbrnt
-## Last update Wed Apr 19 17:07:25 2017 Anaïs Breant
+## Last update Wed Apr 19 13:30:28 2017 Glenn Gabriel Irakiza
 ##
 
 NAME	=	lem_in
@@ -25,7 +25,8 @@ SRCS	=	src/anais/open_file.c			\
 		src/anais/check_start_end.c		\
 		src/anais/skip_bad_line.c		\
 		src/anais/epur_str_check.c		\
-		src/anais/valid_room.c			\
+		src/anais/valid_file.c			\
+		src/anais/my_stranger.c			\
 		src/anais/display_arr.c			\
 
 OBJS	=	$(SRCS:.c=.o)

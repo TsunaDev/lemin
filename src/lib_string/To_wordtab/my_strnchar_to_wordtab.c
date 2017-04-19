@@ -5,14 +5,14 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
 ** Started on  Wed Apr  5 16:13:59 2017 Glenn Gabriel Irakiza
-** Last update Sun Apr  9 20:26:15 2017 Glenn Gabriel Irakiza
+** Last update Wed Apr 19 12:27:19 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdio.h>
 #include	<stdlib.h>
 #include	"my_string.h"
 
-int		my_nb_words_env(char *str, char cmp, int i)
+int		my_nb_words_char(char *str, char cmp, int i)
 {
   int		b;
 
@@ -93,7 +93,7 @@ char		**my_strnchar_to_wordtab(char *str, char cmp)
   tab = NULL;
   if (str == NULL)
     return (NULL);
-  size = my_nb_words_env(str, cmp, 0);
+  size = my_nb_words_char(str, cmp, 0);
   tab = malloc(sizeof(char *) * (size + 1));
   if (tab == NULL)
     exit(84);
