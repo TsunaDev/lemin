@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
 ** Started on  Wed Apr 19 13:25:26 2017 Glenn Gabriel Irakiza
-** Last update Wed Apr 19 14:11:51 2017 Glenn Gabriel Irakiza
+** Last update Wed Apr 19 14:15:30 2017 Glenn Gabriel Irakiza
 */
 
 #include	"my_string.h"
@@ -39,7 +39,6 @@ void		my_stranger(char **arr)
 {
   int		y;
 
-  //my_showtab(arr);
   y = stranger_room(arr, ' ', 3, 1);
   if (y == -1)
     return ;

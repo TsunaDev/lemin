@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
 ** Started on  Tue Apr 18 08:49:42 2017 Glenn Gabriel Irakiza
-** Last update Wed Apr 19 13:31:31 2017 Glenn Gabriel Irakiza
+** Last update Wed Apr 19 16:38:16 2017 Glenn Gabriel Irakiza
 */
 
 #include	"check_file.h"
@@ -99,7 +99,6 @@ static int	pos_error_room(char **arr)
       nb_words = my_nb_words_char(arr[y], '-', 0);
       y++;
     }
-  rt = pos_error_connect_room(arr);
   return (rt);
 }
 
