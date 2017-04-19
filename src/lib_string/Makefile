@@ -5,7 +5,7 @@
 ## Login   <irakiz_g@epitech.net>
 ## 
 ## Started on  Mon Nov  7 10:40:19 2016 gabriel irakiza
-## Last update Wed Apr 12 16:00:54 2017 Glenn Gabriel Irakiza
+## Last update Wed Apr 19 20:27:31 2017 Anaïs Breant
 ##
 
 NAME	=	libstr.a
@@ -33,6 +33,7 @@ SRC	=	my_isnum.c				\
 		To_wordtab/my_epurnchar_str.c		\
 		To_wordtab/my_strnchar_to_wordtab.c	\
 		To_wordtab/my_str_to_wordtab.c		\
+		To_wordtab/my_str_to_wordtab_hypen.c	\
 
 OBJS	=	$(SRC:.c=.o)
 

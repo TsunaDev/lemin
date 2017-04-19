@@ -1,11 +1,11 @@
 /*
 ** my_pars.c for my_pars.c in /home/gaby/projet_Epitech/CPE/CPE_2016_Lemin/src/anais
-** 
+**
 ** Made by Glenn Gabriel Irakiza
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
-** 
+**
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Fri Apr 14 09:19:15 2017 Glenn Gabriel Irakiza
+** Last update Wed Apr 19 19:03:34 2017 Anaïs Breant
 */
 
 #include	"my_string.h"
@@ -47,9 +47,10 @@ static t_room	*my_init_room(char *str, int type)
   return (room);
 }
 
-t_room		**my_recup_room(char **arr, int size)
+t_room		**my_recup_room(char **arr)
 {
   t_room	**room;
+  int		size;
   int		nb_words;
   int		cmp;
   int		i;
