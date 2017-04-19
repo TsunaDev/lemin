@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Wed Apr 19 19:03:34 2017 Anaïs Breant
+** Last update Wed Apr 19 21:01:33 2017 Anaïs Breant
 */
 
 #include	"my_string.h"
@@ -15,7 +15,7 @@ static void	my_pos_room(int start, int i, char *str, t_room *room)
 {
   char		*tmp;
 
-  while (str[i] != ' ' && str[i] != '\0')
+  while (str[i] != '\0' && str[i] != ' ')
     i++;
   tmp = my_strndup_end(str, start, i);
   room->x = my_getnbr(tmp);

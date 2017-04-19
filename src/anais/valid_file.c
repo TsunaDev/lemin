@@ -1,11 +1,11 @@
 /*
 ** valid_file.c for valid_file.c in /home/gaby/projet_Epitech/CPE/CPE_2016_Lemin/src/anais
-** 
+**
 ** Made by Glenn Gabriel Irakiza
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
-** 
+**
 ** Started on  Tue Apr 18 08:49:42 2017 Glenn Gabriel Irakiza
-** Last update Wed Apr 19 16:38:16 2017 Glenn Gabriel Irakiza
+** Last update Wed Apr 19 20:40:58 2017 Anaïs Breant
 */
 
 #include	"check_file.h"
@@ -99,7 +99,7 @@ static int	pos_error_room(char **arr)
       nb_words = my_nb_words_char(arr[y], '-', 0);
       y++;
     }
-  return (rt);
+  return (-1);
 }
 
 int		my_valid_file(char **arr)

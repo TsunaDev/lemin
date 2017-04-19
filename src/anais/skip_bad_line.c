@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 20:02:51 2017 Anaïs Breant
-** Last update Tue Apr 18 13:12:57 2017 Anaïs Breant
+** Last update Wed Apr 19 21:01:02 2017 Anaïs Breant
 */
 
 #include	<unistd.h>
@@ -65,7 +65,9 @@ static char	*skip_comment(char *str)
   cpt = 0;
   while (str[cpt] != '\0')
     {
-      if (cpt > 0 &&
+      if (cpt == 0 && str[cpt] == '#' && str[cpt + 1] != '#')
+	str[cpt] = '\0';
+      else if (cpt > 0 &&
 	  str[cpt] == '#' && str[cpt - 1] != '#' && str[cpt + 1] != '#')
 	str[cpt] = '\0';
       else

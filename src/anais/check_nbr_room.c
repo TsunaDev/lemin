@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 19:57:42 2017 Anaïs Breant
-** Last update Wed Apr 19 20:33:49 2017 Anaïs Breant
+** Last update Wed Apr 19 20:58:18 2017 Anaïs Breant
 */
 
 #include	<stdlib.h>
@@ -49,12 +49,14 @@ static int	find_nbr_tunnel(char **arr)
 static int	check_nbr_room_bis(char *str, t_room **room)
 {
   char		**tab;
+  int		count_match;
   int		return_value;
   int		cpt_tab;
   int		cpt_room;
 
   cpt_tab = 0;
-  tab = my_str_to_wordtab_hyphen(str);
+  count_match = 0;
+  tab = my_strnchar_to_wordtab(str, '-');
   while (tab[cpt_tab] != NULL)
     {
       cpt_room = 0;
@@ -62,32 +64,34 @@ static int	check_nbr_room_bis(char *str, t_room **room)
 	{
 	  return_value = my_strcmp(tab[cpt_tab], room[cpt_room]->name);
 	  if (return_value == 0)
-	    return (1);
+	    count_match++;
 	  cpt_room++;
 	}
       cpt_tab++;
     }
-  return (0);
+  my_free_array(tab);
+  if (count_match == 2)
+    return (0);
+  return (1);
 }
 
 char		**check_nbr_room(t_room **room, char **arr)
 {
   int		return_value;
-  int		cpt;
   int		cpt_tunnel;
 
-  cpt = 0;
   cpt_tunnel = find_nbr_tunnel(arr);
   if (cpt_tunnel == -1)
     return (arr);
   while (arr[cpt_tunnel] != NULL)
     {
-      return_value = check_nbr_room_bis(arr[cpt], room);
+      return_value = check_nbr_room_bis(arr[cpt_tunnel], room);
       if (return_value == 1)
 	{
 	  arr[cpt_tunnel] = NULL;
 	  return (arr);
 	}
+      cpt_tunnel++;
     }
   return (arr);
 }

@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Wed Apr 19 20:34:15 2017 Anaïs Breant
+** Last update Wed Apr 19 20:39:26 2017 Anaïs Breant
 */
 
 #include	"lemin.h"
@@ -21,8 +21,8 @@ int		my_pars(char **arr)
     return (-1);
   arr = skip_bad_line(arr);
   my_valid_file(arr);
-  display_arr(arr);
   room = my_recup_room(arr);
   arr = check_nbr_room(room, arr);
+  display_arr(arr);
   return (0);
 }
