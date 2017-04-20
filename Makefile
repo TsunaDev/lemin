@@ -5,7 +5,7 @@
 ## Login   <anais.breant@epitech.eu>
 ## 
 ## Started on  Tue Apr  4 17:10:32 2017 anaisbrnt
-## Last update Wed Apr 19 21:47:59 2017 Anaïs Breant
+## Last update Thu Apr 20 11:42:51 2017 Anaïs Breant
 ##
 
 NAME	=	lem_in
@@ -15,11 +15,11 @@ CC	=	gcc -o
 CFLAGS	=	-W -Wall -Wextra -g
 CFLAGS	+=	-Iinclude
 
-SRCS	=	src/parsing/open_file.c			\
+SRCS	=	src/main.c				\
+		src/parsing/open_file.c			\
 		src/parsing/my_pars.c			\
 		src/parsing/create_room.c		\
 		src/parsing/utils_create_room.c		\
-		src/parsing/main.c			\
 		src/parsing/check_file.c		\
 		src/parsing/check_nbr_ants.c		\
 		src/parsing/check_start_end.c		\
