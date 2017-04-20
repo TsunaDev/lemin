@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 19:37:11 2017 Anaïs Breant
-** Last update Tue Apr 18 12:59:07 2017 Anaïs Breant
+** Last update Thu Apr 20 06:10:57 2017 Glenn Gabriel Irakiza
 */
 
 #include	<unistd.h>
@@ -26,7 +26,7 @@ static int	start_end(char **arr, char *to_compare)
 	nbr_compare++;
       cpt++;
     }
-  return(nbr_compare);
+  return (nbr_compare);
 }
 
 static char	**delete_start_end(char **arr, char *to_delete)

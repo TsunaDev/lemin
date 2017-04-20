@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Wed Apr 19 21:48:49 2017 Anaïs Breant
+** Last update Thu Apr 20 06:12:34 2017 Glenn Gabriel Irakiza
 */
 
 #include	"my_string.h"
