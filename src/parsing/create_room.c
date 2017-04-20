@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Wed Apr 19 19:29:10 2017 Glenn Gabriel Irakiza
+** Last update Thu Apr 20 08:56:27 2017 Glenn Gabriel Irakiza
 */
 
 #include	"my_string.h"
@@ -29,7 +29,7 @@ static void	my_pos_room(int start, int i, char *str, t_room *room)
   free(tmp);
 }
 
-static t_room	*my_init_room(char *str, int type)
+static t_room	*my_init_room(char *str, int *type)
 {
   t_room	*room;
   int		i;
@@ -43,60 +43,52 @@ static t_room	*my_init_room(char *str, int type)
   room->name = my_strndup_end(str, 0, i);
   i++;
   my_pos_room(i, i, str, room);
-  room->type = type;
+  if (type == NULL)
+    room->type = 1;
+  else if (type[0] == 0)
+    room->type = 0;
+  else
+    room->type = 2;
   return (room);
 }
 
-t_room		**my_recup_room(char **arr)
+static int	skip_line_void(char **arr, int y)
 {
-  t_room	**room;
   int		len;
-  int		size;
+
+  len = my_strlen(arr[y]);
+  while (len == 0)
+    {
+      y++;
+      len = my_strlen(arr[y]);
+    }
+  return (y);
+}
+
+int		my_create_room(t_room **room, char **arr)
+{
   int		nb_words;
-  int		cmp;
+  int		cmp[2];
   int		i;
   int		y;
 
-  y = 1;
+  y = 0;
   i = 0;
-  size = nb_room(arr) + 1;
-  room = malloc(sizeof(t_room *) * size);
   while (arr[y] != NULL)
     {
+      y++;
       nb_words = my_nb_words(arr[y]);
-      cmp = my_strcmp("##start", arr[y]);
-      if (cmp == 0)
+      cmp[0] = my_strcmp("##start", arr[y]);
+      cmp[1] = my_strcmp("##end", arr[y]);
+      if (cmp[0] == 0 || cmp[1] == 0)
 	{
 	  y++;
-	  len = my_strlen(arr[y]);
-	  while (len == 0)
-	    {
-	      y++;
-	      len = my_strlen(arr[y]);
-	    }
-	  room[i] = my_init_room(arr[y], 0);
-	  i++;
-	}
-      cmp = my_strcmp("##end", arr[y]);
-      if (cmp == 0)
-	{
-	  y++;
-	  len = my_strlen(arr[y]);
-	  while (len == 0)
-	    {
-	      y++;
-	      len = my_strlen(arr[y]);
-	    }
-	  room[i] = my_init_room(arr[y], 2);
-	  i++;
+	  y = skip_line_void(arr, y);
+	  room[i++] = my_init_room(arr[y], cmp);
 	}
       if (nb_words == 3)
-	{
-	  room[i] = my_init_room(arr[y], 1);
-	  i++;
-	}
-      y++;
+	room[i++] = my_init_room(arr[y], NULL);
     }
   room[i] = NULL;
-  return (room);
+  return (0);
 }

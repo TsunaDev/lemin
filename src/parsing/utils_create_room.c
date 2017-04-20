@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Thu Apr 20 06:12:34 2017 Glenn Gabriel Irakiza
+** Last update Thu Apr 20 08:29:10 2017 Glenn Gabriel Irakiza
 */
 
 #include	"my_string.h"
@@ -41,7 +41,7 @@ void		my_show_room(t_room **room)
 int		nb_room(char **arr)
 {
   int		nb_words;
-  int		cmp;
+  int		cmp[2];
   int		i;
   int		y;
 
@@ -50,14 +50,9 @@ int		nb_room(char **arr)
   while (arr[y] != NULL)
     {
       nb_words = my_nb_words(arr[y]);
-      cmp = my_strcmp("##start", arr[y]);
-      if (cmp == 0)
-	{
-	  y++;
-	  i++;
-	}
-      cmp = my_strcmp("##end", arr[y]);
-      if (cmp == 0)
+      cmp[0] = my_strcmp("##start", arr[y]);
+      cmp[1] = my_strcmp("##end", arr[y]);
+      if (cmp[0] == 0 || cmp[1] == 0)
 	{
 	  y++;
 	  i++;

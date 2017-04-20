@@ -5,21 +5,21 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 20:02:51 2017 Anaïs Breant
-** Last update Wed Apr 19 21:01:02 2017 Anaïs Breant
+** Last update Thu Apr 20 08:46:28 2017 Glenn Gabriel Irakiza
 */
 
 #include	<unistd.h>
 #include	"my_string.h"
 #include	"check_file.h"
 
-static char	*modif_str(char **str)
+static int	modif_str(char **str)
 {
   free(*str);
   (*str) = malloc(sizeof(char) * 1);
   if (*str == NULL)
-    return (NULL);
+    return (84);
   (*str)[0] = '\0';
-  return (*str);
+  return (0);
 }
 
 static int	check_str_connect(char *str)

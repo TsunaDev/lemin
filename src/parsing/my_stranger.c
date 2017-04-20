@@ -5,12 +5,12 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Wed Apr 19 13:25:26 2017 Glenn Gabriel Irakiza
-** Last update Wed Apr 19 21:48:21 2017 Anaïs Breant
+** Last update Thu Apr 20 08:59:02 2017 Glenn Gabriel Irakiza
 */
 
 #include	"my_string.h"
 
-int		stranger_room(char **arr, char c, int limit, int y)
+static int	stranger_room(char **arr, char c, int limit, int y)
 {
   int		cmp[2];
   int		nb_words;
