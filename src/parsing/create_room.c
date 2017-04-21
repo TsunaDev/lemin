@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Fri Apr 21 15:02:42 2017 Anaïs Breant
+** Last update Fri Apr 21 16:39:09 2017 Glenn Gabriel Irakiza
 */
 
 #include	"my_string.h"
@@ -29,7 +29,7 @@ static void	my_pos_room(int start, int i, char *str, t_room *room)
   free(tmp);
 }
 
-static t_room	*my_init_room(char *str, int *type)
+static t_room	*my_init_room(char *str, int *type, int name)
 {
   t_room	*room;
   int		i;
@@ -38,6 +38,7 @@ static t_room	*my_init_room(char *str, int *type)
   room = malloc(sizeof(t_room));
   if (room == NULL)
     return (NULL);
+  room->new_name = name;
   while (str[i] != ' ' && str[i] != '\0')
     i++;
   room->name = my_strndup_end(str, 0, i);
@@ -84,10 +85,14 @@ int		my_create_room(t_room **room, char **arr)
 	{
 	  y++;
 	  y = skip_line_void(arr, y);
-	  room[i++] = my_init_room(arr[y], cmp);
+	  room[i] = my_init_room(arr[y], cmp, i);
+	  i++;
 	}
       if (nb_words == 3)
-	room[i++] = my_init_room(arr[y], NULL);
+	{
+	  room[i] = my_init_room(arr[y], NULL, i);
+	  i++;
+	}
     }
   room[i] = NULL;
   my_sort_room(room);

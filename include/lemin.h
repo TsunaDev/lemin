@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:25:21 2017 Glenn Gabriel Irakiza
-** Last update Fri Apr 21 12:35:07 2017 Glenn Gabriel Irakiza
+** Last update Fri Apr 21 16:37:47 2017 Glenn Gabriel Irakiza
 */
 
 #ifndef	LEMIN_H_
@@ -15,6 +15,7 @@ typedef struct		s_room
 {
   char			*name;
   int			type;
+  int			new_name;
   int			x;
   int			y;
 }			t_room;

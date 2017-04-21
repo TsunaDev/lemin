@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
 ** Started on  Wed Apr  5 16:13:59 2017 Glenn Gabriel Irakiza
-** Last update Wed Apr 19 12:27:19 2017 Glenn Gabriel Irakiza
+** Last update Fri Apr 21 14:45:29 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdio.h>
@@ -72,7 +72,7 @@ static char	**my_tab_create(char **tab, char *str, char cmp, int size)
     {
       x = 0;
       tab[y] = malloc(sizeof(char) *
-			 (nb_char_in_words_env(str, i, cmp) + 1));
+		      (nb_char_in_words_env(str, i, cmp) + 1));
       if (tab[y] == NULL)
 	exit(84);
       while (str[i] != cmp && str[i] != '\0')
