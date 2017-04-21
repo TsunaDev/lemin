@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 20:02:51 2017 Anaïs Breant
-** Last update Fri Apr 21 13:51:44 2017 Anaïs Breant
+** Last update Fri Apr 21 14:13:58 2017 Anaïs Breant
 */
 
 #include	<unistd.h>
@@ -95,7 +95,8 @@ char		**skip_bad_line(char **arr)
 	cpt++;
       else
 	{
-	  modif_str(&arr[cpt]);
+	  if (arr[cpt][0] != '\0')
+	    modif_str(&arr[cpt]);
 	  cpt++;
 	}
     }
