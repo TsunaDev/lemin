@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 18:56:20 2017 Anaïs Breant
-** Last update Wed Apr 12 19:54:38 2017 Anaïs Breant
+** Last update Fri Apr 21 10:46:48 2017 Anaïs Breant
 */
 
 #include	"my_string.h"

@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 19:57:42 2017 Anaïs Breant
-** Last update Wed Apr 19 20:58:18 2017 Anaïs Breant
+** Last update Thu Apr 20 15:40:03 2017 Anaïs Breant
 */
 
 #include	<stdlib.h>
@@ -36,6 +36,7 @@ static int	find_nbr_tunnel(char **arr)
   int		cpt;
 
   cpt = 0;
+
   while (arr[cpt] != NULL)
     {
       return_value = check_str(arr[cpt]);
