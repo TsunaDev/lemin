@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Fri Apr 21 12:41:56 2017 Glenn Gabriel Irakiza
+** Last update Fri Apr 21 15:02:42 2017 Anaïs Breant
 */
 
 #include	"my_string.h"
@@ -80,7 +80,7 @@ int		my_create_room(t_room **room, char **arr)
       nb_words = my_nb_words(arr[y]);
       cmp[0] = my_strcmp("##start", arr[y]);
       cmp[1] = my_strcmp("##end", arr[y]);
-      if (cmp[0] == 0 || cmp[1] == 0)
+      if ((cmp[0] == 0 || cmp[1] == 0) && arr[y + 1] != NULL)
 	{
 	  y++;
 	  y = skip_line_void(arr, y);

@@ -1,48 +1,58 @@
 /*
-** my_stranger.c for my_srtanger.c in /home/gaby/projet_Epitech/CPE/CPE_2016_Lemin/src/anais
+** my_stranger.c for Lemin in /home/anaisbrnt/EPITECH/Projet/CPE/lem_in/CPE_2016_Lemin/src/parsing
 **
-** Made by Glenn Gabriel Irakiza
-** Login   <glenn-gabriel.irakiza@epitech.eu>
+** Made by Anaïs Breant
+** Login   <anais.breant@epitech.eu>
 **
-** Started on  Wed Apr 19 13:25:26 2017 Glenn Gabriel Irakiza
-** Last update Thu Apr 20 08:59:02 2017 Glenn Gabriel Irakiza
+** Started on  Fri Apr 21 14:19:39 2017 Anaïs Breant
+** Last update Fri Apr 21 15:01:16 2017 Anaïs Breant
 */
 
+#include	<stdlib.h>
 #include	"my_string.h"
 
-static int	stranger_room(char **arr, char c, int limit, int y)
+static int	compare_next_start_end(char *str)
 {
-  int		cmp[2];
-  int		nb_words;
+  int		cpt_space;
+  int		cpt;
 
-  cmp[0] = 1;
-  cmp[1] = 1;
-  while (arr[y] != NULL)
+  cpt = 0;
+  cpt_space = 0;
+  while (str[cpt] != '\0')
     {
-      if (arr[y][0] != '\0')
-	{
-	  nb_words = my_nb_words_char(arr[y], c, 0);
-	  if (c == ' ')
-	    {
-	      cmp[0] = my_strcmp(arr[y], "##start");
-	      cmp[1] = my_strcmp(arr[y], "##end");
-	    }
-	  if (nb_words != limit && cmp[0] != 0 && cmp[1] != 0)
-	    return (y);
-	}
-      y++;
+      if (str[cpt] == ' ')
+	cpt_space++;
+      cpt++;
     }
-  return (-1);
+  if (cpt_space != 2)
+    return (1);
+  return (0);
 }
 
-void		my_stranger(char **arr)
+int		my_stranger(char **arr)
 {
-  int		y;
+  int		return_value;
+  int		cpt;
 
-  y = stranger_room(arr, ' ', 3, 1);
-  if (y == -1)
-    return ;
-  y = stranger_room(arr, '-', 2, y);
-  if (y == -1)
-    return ;
+  cpt = 0;
+  while (arr[cpt] != NULL)
+    {
+      return_value = my_strcmp(arr[cpt], "##start");
+      if (return_value == 0)
+	{
+	  return_value = compare_next_start_end(arr[++cpt]);
+	  if (return_value == 1)
+	    arr[cpt] = NULL;
+	}
+      return_value = my_strcmp(arr[cpt], "##end");
+      if (return_value == 0)
+	{
+	  return_value = compare_next_start_end(arr[++cpt]);
+	  if (return_value == 1)
+	    arr[cpt] = NULL;
+	}
+      else
+	cpt++;
+    }
+  return (0);
 }
