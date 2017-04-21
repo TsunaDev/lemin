@@ -5,7 +5,7 @@
 ## Login   <anais.breant@epitech.eu>
 ## 
 ## Started on  Tue Apr  4 17:10:32 2017 anaisbrnt
-## Last update Thu Apr 20 11:42:51 2017 Anaïs Breant
+## Last update Fri Apr 21 12:14:18 2017 Anaïs Breant
 ##
 
 NAME	=	lem_in
@@ -29,6 +29,7 @@ SRCS	=	src/main.c				\
 		src/parsing/my_stranger.c		\
 		src/parsing/display_arr.c		\
 		src/parsing/check_nbr_room.c		\
+		src/parsing/delete_room_tunnel.c	\
 
 OBJS	=	$(SRCS:.c=.o)
 

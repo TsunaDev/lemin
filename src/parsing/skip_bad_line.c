@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 20:02:51 2017 Anaïs Breant
-** Last update Thu Apr 20 08:46:28 2017 Glenn Gabriel Irakiza
+** Last update Fri Apr 21 11:34:27 2017 Anaïs Breant
 */
 
 #include	<unistd.h>
@@ -99,5 +99,6 @@ char		**skip_bad_line(char **arr)
 	  cpt++;
 	}
     }
+  arr = delete_room_tunnel(arr);
   return (arr);
 }

@@ -5,12 +5,18 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Thu Apr 20 09:45:58 2017 Glenn Gabriel Irakiza
+** Last update Fri Apr 21 11:31:03 2017 Anaïs Breant
 */
 
 #include	"lemin.h"
 #include	"check_file.h"
 #include	"my_string.h"
+
+/*
+**Toujours afficher même si le nbr fourmis n'est pas bon
+** check si on doit skip ou arrêter la ligne pour le nbr de fourmis
+** pas bon
+*/
 
 int		my_pars(char **arr)
 {
@@ -19,7 +25,7 @@ int		my_pars(char **arr)
 
   arr = check_file(arr);
   if (arr == NULL)
-    return (-1);
+    return (1);
   arr = skip_bad_line(arr);
   my_valid_file(arr);
   size = nb_room(arr) + 1;

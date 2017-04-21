@@ -5,14 +5,14 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 19:57:42 2017 Anaïs Breant
-** Last update Thu Apr 20 15:40:03 2017 Anaïs Breant
+** Last update Fri Apr 21 12:13:59 2017 Anaïs Breant
 */
 
 #include	<stdlib.h>
 #include	"my_string.h"
 #include	"lemin.h"
 
-static int	check_str(char *str)
+int		check_str(char *str)
 {
   int		nbr_hyphen;
   int		cpt;
@@ -30,7 +30,7 @@ static int	check_str(char *str)
   return (0);
 }
 
-static int	find_nbr_tunnel(char **arr)
+int		find_nbr_tunnel(char **arr)
 {
   int		return_value;
   int		cpt;
