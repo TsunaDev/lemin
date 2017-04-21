@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Thu Apr 20 08:56:27 2017 Glenn Gabriel Irakiza
+** Last update Fri Apr 21 12:41:56 2017 Glenn Gabriel Irakiza
 */
 
 #include	"my_string.h"
@@ -90,5 +90,6 @@ int		my_create_room(t_room **room, char **arr)
 	room[i++] = my_init_room(arr[y], NULL);
     }
   room[i] = NULL;
+  my_sort_room(room);
   return (0);
 }

@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Thu Apr 20 08:29:10 2017 Glenn Gabriel Irakiza
+** Last update Fri Apr 21 12:13:11 2017 Glenn Gabriel Irakiza
 */
 
 #include	"my_string.h"
@@ -16,6 +16,8 @@ void		my_free_room(t_room **arr)
   int		i;
 
   i = 0;
+  if (arr == NULL)
+    return ;
   while (arr[i] != NULL)
     {
       free(arr[i]->name);
