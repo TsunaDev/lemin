@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Fri Apr 21 16:53:25 2017 Glenn Gabriel Irakiza
+** Last update Fri Apr 21 17:06:25 2017 Glenn Gabriel Irakiza
 */
 
 #include	"my_string.h"
@@ -57,6 +57,7 @@ static int	skip_line_void(char **arr, int y)
 {
   int		len;
 
+  y++;
   len = my_strlen(arr[y]);
   while (len == 0)
     {
@@ -68,33 +69,29 @@ static int	skip_line_void(char **arr, int y)
 
 int		my_create_room(t_room **room, char **arr)
 {
-  int		nb_words;
-  int		cmp[2];
-  int		i;
-  int		y;
+  int		cmp[3];
+  int		y[2];
 
-  y = 0;
-  i = 0;
-  while (arr[y] != NULL)
+  y[0] = 0;
+  y[1] = 0;
+  while (arr[y[0]] != NULL)
     {
-      y++;
-      nb_words = my_nb_words(arr[y]);
-      cmp[0] = my_strcmp("##start", arr[y]);
-      cmp[1] = my_strcmp("##end", arr[y]);
-      if ((cmp[0] == 0 || cmp[1] == 0) && arr[y + 1] != NULL)
+      y[0]++;
+      cmp[0] = my_strcmp("##start", arr[y[0]]);
+      cmp[1] = my_strcmp("##end", arr[y[0]]);
+      cmp[2] = my_nb_words(arr[y[0]]);
+      if ((cmp[0] == 0 || cmp[1] == 0) && arr[y[0] + 1] != NULL)
 	{
-	  y++;
-	  y = skip_line_void(arr, y);
-	  room[i] = my_init_room(arr[y], cmp, i);
-	  i++;
+	  y[0] = skip_line_void(arr, y[0]);
+	  room[y[1]] = my_init_room(arr[y[0]], cmp, y[1]);
+	  y[1]++;
 	}
-      if (nb_words == 3)
+      if (cmp[2] == 3)
 	{
-	  room[i] = my_init_room(arr[y], NULL, i);
-	  i++;
+	  room[y[1]] = my_init_room(arr[y[0]], NULL, y[1]);
+	  y[1]++;
 	}
     }
-  room[i] = NULL;
-  my_sort_room(room);
+  room[y[1]] = NULL;
   return (0);
 }

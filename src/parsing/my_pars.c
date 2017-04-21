@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Fri Apr 21 16:55:45 2017 Glenn Gabriel Irakiza
+** Last update Fri Apr 21 17:07:08 2017 Glenn Gabriel Irakiza
 */
 
 #include	"lemin.h"
@@ -33,6 +33,7 @@ int		my_pars(char **arr)
   if (room == NULL || arr == NULL)
     return (84);
   my_create_room(room, arr);
+  my_sort_room(room);
   arr = check_nbr_room(room, arr);
   display_arr(arr);
   my_free_room(room);
