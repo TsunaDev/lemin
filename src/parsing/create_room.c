@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Fri Apr 21 16:39:09 2017 Glenn Gabriel Irakiza
+** Last update Fri Apr 21 16:53:25 2017 Glenn Gabriel Irakiza
 */
 
 #include	"my_string.h"
@@ -45,11 +45,11 @@ static t_room	*my_init_room(char *str, int *type, int name)
   i++;
   my_pos_room(i, i, str, room);
   if (type == NULL)
-    room->type = 1;
+    room->type = 2;
   else if (type[0] == 0)
     room->type = 0;
   else
-    room->type = 2;
+    room->type = 1;
   return (room);
 }
 

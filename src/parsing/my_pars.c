@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Fri Apr 21 11:31:03 2017 Anaïs Breant
+** Last update Fri Apr 21 16:55:45 2017 Glenn Gabriel Irakiza
 */
 
 #include	"lemin.h"
@@ -13,7 +13,7 @@
 #include	"my_string.h"
 
 /*
-**Toujours afficher même si le nbr fourmis n'est pas bon
+** Toujours afficher même si le nbr fourmis n'est pas bon
 ** check si on doit skip ou arrêter la ligne pour le nbr de fourmis
 ** pas bon
 */

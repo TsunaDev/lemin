@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:24:34 2017 Glenn Gabriel Irakiza
-** Last update Wed Apr 19 19:04:49 2017 Anaïs Breant
+** Last update Fri Apr 21 16:54:14 2017 Glenn Gabriel Irakiza
 */
 
 #include	"lemin.h"
@@ -13,7 +13,7 @@
 
 int		main()
 {
-  char		** arr;
+  char		**arr;
 
   arr = open_file(0);
   my_pars(arr);
