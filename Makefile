@@ -5,7 +5,7 @@
 ## Login   <anais.breant@epitech.eu>
 ## 
 ## Started on  Tue Apr  4 17:10:32 2017 anaisbrnt
-## Last update Fri Apr 21 12:36:37 2017 Glenn Gabriel Irakiza
+## Last update Fri Apr 21 19:39:38 2017 Anaïs Breant
 ##
 
 NAME	=	lem_in
@@ -31,6 +31,8 @@ SRCS	=	src/main.c				\
 		src/parsing/check_nbr_room.c		\
 		src/parsing/delete_room_tunnel.c	\
 		src/parsing/my_swap_room.c		\
+		src/parsing/stock_tun/stock_tun.c	\
+		src/parsing/stock_tun/fill_tab_tun.c	\
 
 OBJS	=	$(SRCS:.c=.o)
 

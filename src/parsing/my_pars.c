@@ -5,9 +5,10 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Fri Apr 21 17:07:08 2017 Glenn Gabriel Irakiza
+** Last update Fri Apr 21 19:44:50 2017 Anaïs Breant
 */
 
+#include	"stock_tun.h"
 #include	"lemin.h"
 #include	"check_file.h"
 #include	"my_string.h"
@@ -18,9 +19,23 @@
 ** pas bon
 */
 
+static void	diplay_tun(int **tab)
+{
+  int		cpt;
+
+  cpt = 1;
+  while (cpt < tab[0][0])
+    {
+      printf("%d", tab[cpt][0]);
+      printf("%d\n", tab[cpt][1]);
+      cpt++;
+    }
+}
+
 int		my_pars(char **arr)
 {
   t_room	**room;
+  int		**tab_tun;
   int		size;
 
   arr = check_file(arr);
@@ -36,6 +51,8 @@ int		my_pars(char **arr)
   my_sort_room(room);
   arr = check_nbr_room(room, arr);
   display_arr(arr);
+  tab_tun = create_tab_int(room, arr);
+  diplay_tun(tab_tun);
   my_free_room(room);
   return (0);
 }

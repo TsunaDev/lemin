@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Fri Apr 21 11:45:51 2017 Anaïs Breant
-** Last update Fri Apr 21 12:15:36 2017 Anaïs Breant
+** Last update Fri Apr 21 19:30:50 2017 Anaïs Breant
 */
 
 #include	<stdlib.h>
@@ -21,11 +21,14 @@ char		**delete_room_tunnel(char **arr)
     return (arr);
   while (arr[cpt_tunnel] != NULL)
     {
-      return_value = check_str(arr[cpt_tunnel]);
-      if (return_value == 0)
+      if (arr[cpt_tunnel][0] != '\0')
 	{
-	  arr[cpt_tunnel] = NULL;
-	  return (arr);
+	  return_value = check_str(arr[cpt_tunnel]);
+	  if (return_value == 0)
+	    {
+	      arr[cpt_tunnel] = NULL;
+	      return (arr);
+	    }
 	}
       cpt_tunnel++;
     }

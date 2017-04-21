@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 19:57:42 2017 Anaïs Breant
-** Last update Fri Apr 21 12:13:59 2017 Anaïs Breant
+** Last update Fri Apr 21 19:29:07 2017 Anaïs Breant
 */
 
 #include	<stdlib.h>
@@ -86,11 +86,14 @@ char		**check_nbr_room(t_room **room, char **arr)
     return (arr);
   while (arr[cpt_tunnel] != NULL)
     {
-      return_value = check_nbr_room_bis(arr[cpt_tunnel], room);
-      if (return_value == 1)
+      if (arr[cpt_tunnel][0] != '\0')
 	{
-	  arr[cpt_tunnel] = NULL;
-	  return (arr);
+	  return_value = check_nbr_room_bis(arr[cpt_tunnel], room);
+	  if (return_value == 1)
+	    {
+	      arr[cpt_tunnel] = NULL;
+	      return (arr);
+	    }
 	}
       cpt_tunnel++;
     }
