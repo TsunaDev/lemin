@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 19 16:06:54 2017 Anaïs Breant
-** Last update Fri Apr 21 10:51:11 2017 Anaïs Breant
+** Last update Fri Apr 21 13:55:19 2017 Anaïs Breant
 */
 
 #include	<stdlib.h>
@@ -61,10 +61,8 @@ void		display_arr(char **arr)
 
   cpt_room = 0;
   cpt_tunnel = 0;
-  cpt = 1;
+  cpt = 0;
   my_putstr(1, "#number_of_ants\n");
-  my_putstr(1, arr[0]);
-  my_putstr(1, "\n");
   while (arr[cpt] != NULL)
     {
       if (arr[cpt][0] != '\0')

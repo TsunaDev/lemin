@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 18:56:20 2017 Anaïs Breant
-** Last update Fri Apr 21 11:26:57 2017 Anaïs Breant
+** Last update Fri Apr 21 13:53:32 2017 Anaïs Breant
 */
 
 #include	"my_string.h"
@@ -13,6 +13,7 @@
 
 int		check_nbr_ants(char *str)
 {
+  int		nbr;
   int		cpt;
 
   cpt = 0;
@@ -25,6 +26,12 @@ int		check_nbr_ants(char *str)
 	  my_putstr(2, "Error with the number of ants\n");
 	  return (-1);
 	}
+    }
+  nbr = my_getnbr(str);
+  if (nbr == 0)
+    {
+      my_putstr(2, "Error with the number of ants\n");
+      return (-1);
     }
   return (0);
 }
