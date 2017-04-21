@@ -5,22 +5,25 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Fri Apr 21 14:19:39 2017 Anaïs Breant
-** Last update Fri Apr 21 15:01:16 2017 Anaïs Breant
+** Last update Fri Apr 21 15:41:34 2017 Anaïs Breant
 */
 
 #include	<stdlib.h>
 #include	"my_string.h"
 
-static int	compare_next_start_end(char *str)
+static int	compare_next_start_end(char **str, int *cpt_bis)
 {
   int		cpt_space;
   int		cpt;
 
   cpt = 0;
   cpt_space = 0;
-  while (str[cpt] != '\0')
+  (*cpt_bis)++;
+  while (str[*cpt_bis][0] == '\0')
+    (*cpt_bis)++;
+  while (str[*cpt_bis][cpt] != '\0')
     {
-      if (str[cpt] == ' ')
+      if (str[*cpt_bis][cpt] == ' ')
 	cpt_space++;
       cpt++;
     }
@@ -40,14 +43,14 @@ int		my_stranger(char **arr)
       return_value = my_strcmp(arr[cpt], "##start");
       if (return_value == 0)
 	{
-	  return_value = compare_next_start_end(arr[++cpt]);
+	  return_value = compare_next_start_end(arr, &cpt);
 	  if (return_value == 1)
 	    arr[cpt] = NULL;
 	}
       return_value = my_strcmp(arr[cpt], "##end");
       if (return_value == 0)
 	{
-	  return_value = compare_next_start_end(arr[++cpt]);
+	  return_value = compare_next_start_end(arr, &cpt);
 	  if (return_value == 1)
 	    arr[cpt] = NULL;
 	}
