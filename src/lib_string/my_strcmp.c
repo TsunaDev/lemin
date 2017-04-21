@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu@epitech.net>
 ** 
 ** Started on  Tue Jan 10 22:41:18 2017 Irakiz_g
-** Last update Tue Mar 14 14:28:13 2017 Glenn Gabriel Irakiza
+** Last update Fri Apr 21 08:31:35 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>
@@ -35,17 +35,11 @@ int		my_strcmp(char *src, char *dest)
     return (-1);
   while (src[i] != '\0' || dest[i] != '\0')
     {
-      if (src[i] < dest[i])
-	return (-1);
-      if (src[i] > dest[i])
-	return (2);
+      if (src[i] != dest[i])
+	return (1);
       if (src[i] == dest[i])
 	i++;
     }
-  if (len1 > len2)
-    return (1);
-  if (len1 < len2)
-    return (-1);
   return (0);
 }
 
@@ -58,16 +52,10 @@ int		my_strncmp(char *src, char *dest, int n)
     return (-1);
   while (i < n)
     {
-      if (src[i] < dest[i])
-	return (-1);
-      if (src[i] > dest[i])
-	return (2);
+      if (src[i] != dest[i])
+	return (1);
       if (src[i] == dest[i])
 	i++;
     }
-  if (i < n)
-    return (-1);
-  if (i > n)
-    return (2);
   return (0);
 }
