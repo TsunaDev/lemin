@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Fri Apr 21 17:06:25 2017 Glenn Gabriel Irakiza
+** Last update Tue Apr 25 16:31:39 2017 Glenn Gabriel Irakiza
 */
 
 #include	"my_string.h"
@@ -41,6 +41,7 @@ static t_room	*my_init_room(char *str, int *type, int name)
   room->new_name = name;
   while (str[i] != ' ' && str[i] != '\0')
     i++;
+  room->full = 0;
   room->name = my_strndup_end(str, 0, i);
   i++;
   my_pos_room(i, i, str, room);

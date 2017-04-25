@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:25:21 2017 Glenn Gabriel Irakiza
-** Last update Fri Apr 21 16:37:47 2017 Glenn Gabriel Irakiza
+** Last update Tue Apr 25 16:31:13 2017 Glenn Gabriel Irakiza
 */
 
 #ifndef	LEMIN_H_
@@ -18,6 +18,7 @@ typedef struct		s_room
   int			new_name;
   int			x;
   int			y;
+  int			full;
 }			t_room;
 
 void			my_sort_room(t_room **);
