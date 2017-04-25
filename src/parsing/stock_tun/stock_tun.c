@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Fri Apr 21 18:58:58 2017 Anaïs Breant
-** Last update Fri Apr 21 19:45:09 2017 Anaïs Breant
+** Last update Tue Apr 25 14:10:32 2017 Anaïs Breant
 */
 
 #include	<stdlib.h>
@@ -18,16 +18,18 @@ static int	**make_malloc_tab_tun(int cpt, char **arr)
   int		**tab_tun;
   int		tmp;
 
-  tmp = cpt;
+  tmp = 0;
   while (arr[cpt] != NULL)
-    cpt++;
-  cpt--;
-  tmp = cpt - tmp;
-  tab_tun = malloc(sizeof(int *) * tmp);
+    {
+      if (arr[cpt][0] != '\0')
+	tmp++;
+      cpt++;
+    }
+  tab_tun = malloc(sizeof(int *) * (tmp + 1));
   if (tab_tun == NULL)
     return (NULL);
   cpt = 0;
-  while (cpt < tmp)
+  while (cpt <= tmp)
     {
       tab_tun[cpt] = malloc(sizeof(int) * 2);
       if (tab_tun[cpt] == NULL)

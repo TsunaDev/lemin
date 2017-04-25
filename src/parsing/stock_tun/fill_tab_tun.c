@@ -5,10 +5,11 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Fri Apr 21 19:20:12 2017 Anaïs Breant
-** Last update Fri Apr 21 19:40:30 2017 Anaïs Breant
+** Last update Tue Apr 25 14:25:23 2017 Anaïs Breant
 */
 
 #include	<stdlib.h>
+#include	"stock_tun.h"
 #include	"lemin.h"
 #include	"my_string.h"
 
@@ -55,4 +56,5 @@ void		fill_tab_tun(char **arr, int **tun, int cpt_arr, t_room **room)
 	}
       cpt_arr++;
     }
+  delete_double(tun);
 }

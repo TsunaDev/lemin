@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Fri Apr 21 19:44:50 2017 Anaïs Breant
+** Last update Tue Apr 25 14:13:35 2017 Anaïs Breant
 */
 
 #include	"stock_tun.h"
@@ -24,7 +24,8 @@ static void	diplay_tun(int **tab)
   int		cpt;
 
   cpt = 1;
-  while (cpt < tab[0][0])
+  printf("%d\n", tab[0][0]);
+  while (cpt <= tab[0][0])
     {
       printf("%d", tab[cpt][0]);
       printf("%d\n", tab[cpt][1]);
@@ -53,6 +54,5 @@ int		my_pars(char **arr)
   display_arr(arr);
   tab_tun = create_tab_int(room, arr);
   diplay_tun(tab_tun);
-  my_free_room(room);
   return (0);
 }
