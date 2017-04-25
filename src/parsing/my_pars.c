@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Tue Apr 25 14:13:35 2017 Anaïs Breant
+** Last update Tue Apr 25 17:45:19 2017 Anaïs Breant
 */
 
 #include	"stock_tun.h"
@@ -35,12 +35,13 @@ static void	diplay_tun(int **tab)
 
 int		my_pars(char **arr)
 {
+  int		nbr_ants;
   t_room	**room;
   int		**tab_tun;
   int		size;
 
-  arr = check_file(arr);
-  if (arr == NULL)
+  nbr_ants = check_file(arr);
+  if (nbr_ants == -1)
     return (1);
   arr = skip_bad_line(arr);
   my_valid_file(arr);

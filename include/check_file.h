@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 19:45:19 2017 Anaïs Breant
-** Last update Fri Apr 21 12:15:06 2017 Anaïs Breant
+** Last update Tue Apr 25 17:45:35 2017 Anaïs Breant
 */
 
 #ifndef	CHECK_FILE_H_
@@ -18,12 +18,12 @@ void	my_stranger(char **);
 
 char	**delete_room_tunnel(char **);
 char	**check_start_end(char **);
-char	**check_file(char **);
 char	**skip_bad_line(char **);
 char	**check_nbr_room(t_room **, char **);
 
 char	*epur_str_check(char *);
 
+int	check_file(char **);
 int	check_str(char *);
 int	find_nbr_tunnel(char **);
 int	check_nbr_ants(char *);

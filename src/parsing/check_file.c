@@ -5,14 +5,16 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 19:34:56 2017 Anaïs Breant
-** Last update Fri Apr 21 13:53:49 2017 Anaïs Breant
+** Last update Tue Apr 25 17:46:09 2017 Anaïs Breant
 */
 
 #include	<unistd.h>
 #include	"check_file.h"
+#include	"my_string.h"
 
-char		**check_file(char **arr)
+int		check_file(char **arr)
 {
+  int		nbr_ants;
   int		return_value;
 
   return_value = check_nbr_ants(arr[0]);
@@ -20,10 +22,13 @@ char		**check_file(char **arr)
     {
       arr[0] = NULL;
       display_arr(arr);
-      return (NULL);
+      nbr_ants = 0;
+      return (nbr_ants);
     }
+  else
+    nbr_ants = my_getnbr(arr[0]);
   arr = check_start_end(arr);
   if (arr == NULL)
-    return (NULL);
-  return (arr);
+    return (-1);
+  return (nbr_ants);
 }
