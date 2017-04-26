@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 19:37:11 2017 Anaïs Breant
-** Last update Thu Apr 20 06:10:57 2017 Glenn Gabriel Irakiza
+** Last update Wed Apr 26 16:37:42 2017 Anaïs Breant
 */
 
 #include	<unistd.h>
@@ -73,11 +73,6 @@ char		**check_start_end(char **arr)
     {
       arr = delete_start_end(arr, "##start");
       cpt_end = start_end(arr, "##end");
-    }
-  if (cpt_start < 1 || cpt_end < 1)
-    {
-      my_putstr(2, "You need one '##start' and one '##end'\n");
-      return (NULL);
     }
   return (arr);
 }
