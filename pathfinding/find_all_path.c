@@ -5,23 +5,11 @@
 ** Login   <vincent.larcher@epitech.eu>
 ** 
 ** Started on  Sat Apr 22 19:19:26 2017 LaFleche
-** Last update Wed Apr 26 14:34:28 2017 LaFleche
+** Last update Wed Apr 26 17:07:51 2017 LaFleche
 */
 
 #include <stdlib.h>
 #include "pathfinding.h"
-
-static void	display_tab(int *tab)
-{
-  int		i = 0;
-
-  while (tab[i] != -1)
-    {
-      //      printf("%d ", tab[i]);
-      i++; 
-    }
-  //  printf("\n");
-}
 
 void            my_display_list(t_node *head)
 {
@@ -59,7 +47,7 @@ static int	cp_path_and_add_one_pipe(int *src, t_list *list, t_pathf *pathf, int 
 
   i = 0;
   if (int_cmp(src, new_pipe) == 0)
-    return (del_last_node(list, 0));
+    return (del_last_node(list));
   while (src[i] != -1)
     {
       list->tail->path[i] = src[i];
@@ -73,6 +61,7 @@ static int	cp_path_and_add_one_pipe(int *src, t_list *list, t_pathf *pathf, int 
 	return (good_path(list, i, (pathf->nb_pipes * pathf->nb_rooms + 2), all_path));
       x++;
     }
+  return (0);
 }
 
 static int	first_step(t_list *list, t_list *all_path, t_pathf *pathf)
@@ -147,7 +136,7 @@ static double	*my_cmp(double *cmp, double new_cmp0, double new_cmp1, int i)
   return (cmp);
 }
 
-static double	*find(t_list *list, t_list *all_path, t_node *tmp, int *src, double *cmp, int i, int nb_unique_path)
+static double	*find(t_node *tmp, int *src, double *cmp, int i, int nb_unique_path)
 {
   double	new_cmp[2];
   int		x, pass;
@@ -172,7 +161,7 @@ static double	*find(t_list *list, t_list *all_path, t_node *tmp, int *src, doubl
   return (my_cmp(cmp, new_cmp[0], new_cmp[1], i));
 }
 
-static double	*find_my_unique_path(t_list *list, t_list *all_path, t_pathf *pathf, int nb_unique_path)
+static double	*find_my_unique_path(t_list *all_path, int nb_unique_path)
 {
   t_node	*tmp;
   double	*cmp;
@@ -188,7 +177,7 @@ static double	*find_my_unique_path(t_list *list, t_list *all_path, t_pathf *path
   tmp = all_path->head;
   while (tmp != NULL)
     {
-      cmp = find(list, all_path, tmp, tmp->path, cmp, i, nb_unique_path);
+      cmp = find(tmp, tmp->path, cmp, i, nb_unique_path);
       i++;
       tmp = tmp->next;
     }
@@ -209,7 +198,7 @@ static double	*lets_find_all_path(t_list *list, t_list *all_path, t_pathf *pathf
   nb_unique_path = (tab_intlen(pathf->tools[0]) >= tab_intlen(pathf->tools[1])) ?
     (tab_intlen(pathf->tools[1])) : (tab_intlen(pathf->tools[0]));
   //printf("---------------------------\n");
-  cmp = find_my_unique_path(list, all_path, pathf, nb_unique_path);
+  cmp = find_my_unique_path(all_path, nb_unique_path);
   if (cmp == NULL)
     return (NULL);
   //printf("---------------------------\n");
@@ -242,5 +231,5 @@ int		**find_all_path(int **tools, int nb_rooms, int nb_pipes)
   combination = lets_find_all_path(list, all_path, pathf);
   if (combination == NULL)
     return (NULL);
-  return (get_tab_combination(combination, list, all_path, pathf));
+  return (get_tab_combination(combination, all_path));
 }

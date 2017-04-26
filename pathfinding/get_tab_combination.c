@@ -5,26 +5,13 @@
 ** Login   <vincent.larcher@epitech.eu>
 ** 
 ** Started on  Mon Apr 24 09:42:34 2017 LaFleche
-** Last update Wed Apr 26 11:17:23 2017 LaFleche
+** Last update Wed Apr 26 17:07:08 2017 LaFleche
 */
 
 #include <stdlib.h>
 #include "pathfinding.h"
 
-static int      *clean_tab(int *src, int length)
-{
-  int           i;
-
-  i = 0;
-  while (i != length)
-    {
-      src[i] = -1;
-      i++;
-    }
-  return (src);
-}
-
-int   **print_comb_tab(t_list *list, t_list *all_path, t_node *tmp, int *src, int i, int nb_unique_path, int **path_comb)
+int   **print_comb_tab(t_node *tmp, int *src, int nb_unique_path, int **path_comb)
 {
   int           x;
 
@@ -43,7 +30,7 @@ int   **print_comb_tab(t_list *list, t_list *all_path, t_node *tmp, int *src, in
   return (path_comb);
 }
 
-int   **find_my_combination(t_list *list, t_list *all_path, t_pathf *pathf, int nb_unique_path, int **path_comb, int x)
+int   **find_my_combination(t_list *all_path, int nb_unique_path, int **path_comb, int x)
 {
   t_node        *tmp;
   int		i;
@@ -55,15 +42,13 @@ int   **find_my_combination(t_list *list, t_list *all_path, t_pathf *pathf, int 
       i++;
       tmp = tmp->next;
     }
-  return (print_comb_tab(list, all_path, tmp, tmp->path, i, nb_unique_path, path_comb));
+  return (print_comb_tab(tmp, tmp->path, nb_unique_path, path_comb));
 }
 
-int		**get_tab_combination(double *combination, t_list *list, t_list *all_path, t_pathf *pathf)
+int		**get_tab_combination(double *combination, t_list *all_path)
 {
   int		**path_comb;
-  int		i;
 
-  i = 1;
   path_comb = malloc(sizeof(int *) * ((int)combination[2] + 1));
   if (path_comb == NULL)
     return (NULL);
@@ -71,5 +56,5 @@ int		**get_tab_combination(double *combination, t_list *list, t_list *all_path, 
   if (path_comb[0] == NULL)
     return (NULL);
   path_comb[0][0] = (int)combination[2];
-  return (find_my_combination(list, all_path, pathf, (int)combination[2], path_comb, (int)combination[0]));
+  return (find_my_combination(all_path, (int)combination[2], path_comb, (int)combination[0]));
 }

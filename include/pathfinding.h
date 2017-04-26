@@ -5,7 +5,7 @@
 ** Login   <vincent.larcher@epitech.eu>
 ** 
 ** Started on  Sat Apr 22 20:43:46 2017 LaFleche
-** Last update Wed Apr 26 14:55:53 2017 LaFleche
+** Last update Wed Apr 26 17:07:27 2017 LaFleche
 */
 
 #ifndef PATHFINDING_H
@@ -35,15 +35,15 @@ typedef struct  s_pathf
 
 int             add_node_beginning(t_list *, int);
 int             add_node_end(t_list *, int);
+int             del_last_node(t_list *);
 int		**find_all_path(int **, int, int);
 int		my_push_to_list_all_path(t_list *, t_list *, int);
-int		del_last_node(t_list *, int);
 void		free_linked_list(t_list *);
 int		int_cmp(int *, int);
 int		int_tab_cmp(int *, int *);
 int		tab_intlen(int *);
 int		*my_cp_tab(int *, int *);
-int		**get_tab_combination(double *, t_list *, t_list *, t_pathf *);
+int		**get_tab_combination(double *, t_list *);
 int		**pathfinding(int **, int, int);
 
 

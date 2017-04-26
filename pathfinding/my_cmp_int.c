@@ -5,29 +5,15 @@
 ** Login   <vincent.larcher@epitech.eu>
 ** 
 ** Started on  Sun Apr 23 15:10:04 2017 LaFleche
-** Last update Wed Apr 26 10:31:20 2017 LaFleche
+** Last update Wed Apr 26 16:59:04 2017 LaFleche
 */
 
 #include <stdlib.h>
 #include "pathfinding.h"
 
-static int      *clean_tab(int *src, int length)
-{
-  int           i;
-
-  i = 0;
-  while (i != length)
-    {
-      src[i] = -1;
-      i++;
-    }
-  return (src);
-}
-
 int		*my_cp_tab(int *src, int *dest)
 {
   int		i;
-  int		length;
 
   i = 0;
   //  length = tab_intlen(src) + 1;
@@ -66,7 +52,6 @@ int		tab_intlen(int *tab)
 
 int		int_tab_cmp(int *tab, int *tab2)
 {
-  int		opt;
   int		i, x;
 
   i = 0;

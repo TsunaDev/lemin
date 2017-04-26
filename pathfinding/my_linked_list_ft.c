@@ -5,7 +5,7 @@
 ** Login   <vincent.larcher@epitech.eu>
 ** 
 ** Started on  Sat Apr 22 20:49:30 2017 LaFleche
-** Last update Tue Apr 25 13:19:52 2017 LaFleche
+** Last update Wed Apr 26 16:58:24 2017 LaFleche
 */
 
 #include <stdlib.h>
@@ -27,7 +27,7 @@ void		free_linked_list(t_list *list)
   list->tail = NULL;
 }
 
-int		del_last_node(t_list *list, int opt)
+int		del_last_node(t_list *list)
 {
   t_node	*tmp;
 
@@ -51,7 +51,6 @@ int		del_last_node(t_list *list, int opt)
 
 int		my_push_to_list_all_path(t_list *list, t_list *all_path, int length)
 {
-  t_node	*tmp;
   int		ret;
 
   ret = add_node_end(all_path, length);
@@ -59,7 +58,7 @@ int		my_push_to_list_all_path(t_list *list, t_list *all_path, int length)
     return (84);
   free(all_path->tail->path);
   all_path->tail->path = list->tail->path;
-  del_last_node(list, 1);
+  del_last_node(list);
   return (0);
 }
 
