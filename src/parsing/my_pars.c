@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Tue Apr 25 17:45:19 2017 Anaïs Breant
+** Last update Wed Apr 26 09:19:15 2017 Martin Van Elslande
 */
 
 #include	"stock_tun.h"
@@ -39,6 +39,7 @@ int		my_pars(char **arr)
   t_room	**room;
   int		**tab_tun;
   int		size;
+  int		**paths;
 
   nbr_ants = check_file(arr);
   if (nbr_ants == -1)
@@ -55,5 +56,7 @@ int		my_pars(char **arr)
   display_arr(arr);
   tab_tun = create_tab_int(room, arr);
   diplay_tun(tab_tun);
+  paths = pathfinding();
+  display_shell(paths, room, nbr_ants);
   return (0);
 }

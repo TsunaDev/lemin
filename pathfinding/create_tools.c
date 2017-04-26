@@ -5,13 +5,13 @@
 ** Login   <vincent.larcher@epitech.eu>
 ** 
 ** Started on  Sat Apr 22 14:38:09 2017 LaFleche
-** Last update Tue Apr 25 23:14:19 2017 LaFleche
+** Last update Wed Apr 26 10:09:43 2017 Martin Van Elslande
 */
 
 #include <stdlib.h>
 #include "pathfinding.h"
 
-//int tab[12][2];///////////////////////////////////////////////////////////////////////////////
+int tab[1][2];
 
 static int		my_malloc_size(int num_room, int nb_pipes)
 {
@@ -95,98 +95,20 @@ static int		**create_tools(int nb_rooms, int nb_pipes)
   return (tools);
 }
 
-int		**pathfinding("inserer le nombre de room", "insérer le nombre de pipes")
+int		**pathfinding()
 {
   int		**tools;
   int		**ret;
   int		i = 1, x = 0;
 
-  /*  tab[0][0] = 0;
-  tab[0][1] = 4;
+  tab[0][0] = 0;
+  tab[0][1] = 1;
   
-  tab[1][0] = 0;
-  tab[1][1] = 6;
-  
-  tab[2][0] = 1;
-  tab[2][1] = 3;
-  
-  tab[3][0] = 4;
-  tab[3][1] = 3;
-
-  tab[4][0] = 5;
-  tab[4][1] = 2;
-  
-  tab[5][0] = 3;
-  tab[5][1] = 5;
-  
-  tab[6][0] = 4;
-  tab[6][1] = 2;
-  
-  tab[7][0] = 2;
-  tab[7][1] = 1;
-
-  tab[8][0] = 7;
-  tab[8][1] = 6;
-  
-  tab[9][0] = 7;
-  tab[9][1] = 2;
-  
-  tab[10][0] = 7;
-  tab[10][1] = 4;
-  
-  tab[11][0] = 6;
-  tab[11][1] = 5;*/
-
-  ///  tab[0][0] = 0;
-  ///tab[0][1] = 1;
-  
-  /*  tab[1][0] = 0;
-  tab[1][1] = 3;
-  
-  tab[2][0] = 2;
-  tab[2][1] = 1;
-
-  tab[3][0] = 3;
-  tab[3][1] = 1;
-  
-  tab[4][0] = 2;
-  tab[4][1] = 3;
-
-  tab[5][0] = 0;
-  tab[5][1] = 4;
-
-  tab[6][0] = 1;
-  tab[6][1] = 4;*/
-  
-  /*tab[0][0] = 0;
-  tab[0][1] = 2;
-
-  tab[1][0] = 3;
-  tab[1][1] = 2;
-
-  tab[2][0] = 3;
-  tab[2][1] = 4;
-
-  tab[3][0] = 6;
-  tab[3][1] = 4;
-  
-  tab[4][0] = 4;
-  tab[4][1] = 5;
-
-  tab[5][0] = 5;
-  tab[5][1] = 1;
-
-  tab[6][0] = 0;
-  tab[6][1] = 6;
-  
-  tab[7][0] = 1;
-  tab[7][1] = 6;*/
-  
-  tools = create_tools("inserer le nombre de room", "insérer le nombre de pipes");
+  tools = create_tools(2, 1);
   if (tools == NULL)
     return (84);
       printf("\n");
-  ret = find_all_path(tools, "inserer le nombre de room", "insérer le nombre de pipes");
+  ret = find_all_path(tools, 2, 1);
   if (ret == NULL)
     return (84);
   printf("\n\n---->%d\n", ret[0][0]);
