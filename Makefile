@@ -5,7 +5,7 @@
 ## Login   <anais.breant@epitech.eu>
 ## 
 ## Started on  Tue Apr  4 17:10:32 2017 anaisbrnt
-## Last update Wed Apr 26 15:17:32 2017 Martin Van Elslande
+## Last update Wed Apr 26 16:03:34 2017 LaFleche
 ##
 
 NAME	=	lem_in
@@ -39,8 +39,7 @@ SRCS	=	src/main.c				\
 		pathfinding/my_linked_list_ft.c		\
 		pathfinding/my_cmp_int.c		\
 		pathfinding/get_tab_combination.c	\
-		display/src/display_shell.c		\
-		display/src/display_graphical.c
+		display/src/display_shell.c
 
 OBJS	=	$(SRCS:.c=.o)
 
