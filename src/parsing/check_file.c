@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 19:34:56 2017 Anaïs Breant
-** Last update Wed Apr 26 17:10:10 2017 Anaïs Breant
+** Last update Wed Apr 26 17:19:43 2017 Anaïs Breant
 */
 
 #include	<unistd.h>
@@ -23,7 +23,6 @@ int		check_file(char **arr)
   if (return_value == -1)
     {
       arr[0] = NULL;
-      display_arr(arr);
       nbr_ants = 0;
       return (nbr_ants);
     }
