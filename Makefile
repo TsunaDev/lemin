@@ -5,7 +5,7 @@
 ## Login   <anais.breant@epitech.eu>
 ## 
 ## Started on  Tue Apr  4 17:10:32 2017 anaisbrnt
-## Last update Wed Apr 26 16:03:34 2017 LaFleche
+## Last update Wed Apr 26 16:09:09 2017 LaFleche
 ##
 
 NAME	=	lem_in
@@ -43,7 +43,7 @@ SRCS	=	src/main.c				\
 
 OBJS	=	$(SRCS:.c=.o)
 
-LDFLAGS	=	-Lsrc/lib_string -lstr -lc_graph_prog_full
+LDFLAGS	=	-Lsrc/lib_string -lstr
 
 all: $(NAME)
 
