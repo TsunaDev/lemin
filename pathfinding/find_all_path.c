@@ -5,7 +5,7 @@
 ** Login   <vincent.larcher@epitech.eu>
 ** 
 ** Started on  Sat Apr 22 19:19:26 2017 LaFleche
-** Last update Tue Apr 25 22:53:49 2017 LaFleche
+** Last update Wed Apr 26 14:34:28 2017 LaFleche
 */
 
 #include <stdlib.h>
@@ -17,7 +17,7 @@ static void	display_tab(int *tab)
 
   while (tab[i] != -1)
     {
-      printf("%d ", tab[i]);
+      //      printf("%d ", tab[i]);
       i++; 
     }
   //  printf("\n");
@@ -34,10 +34,10 @@ void            my_display_list(t_node *head)
       i = 0;
       while (tmp->path[i] != -1)
 	{
-	  printf("%d ", tmp->path[i]);
+	  //  printf("%d ", tmp->path[i]);
 	  i++;
 	}
-      printf("\n");
+      //      printf("\n");
       tmp = tmp->next;
     }
 }
@@ -70,7 +70,7 @@ static int	cp_path_and_add_one_pipe(int *src, t_list *list, t_pathf *pathf, int 
   while (pathf->tools[1][x] != -1)
     {
       if (pathf->tools[1][x] == new_pipe)
-	return (good_path(list, i, (pathf->nb_pipes * pathf->nb_rooms), all_path));
+	return (good_path(list, i, (pathf->nb_pipes * pathf->nb_rooms + 2), all_path));
       x++;
     }
 }
@@ -83,17 +83,17 @@ static int	first_step(t_list *list, t_list *all_path, t_pathf *pathf)
   i = 0;
   while (pathf->tools[0][i] != -1)
     {
-      if (84 == add_node_end(list, (pathf->nb_rooms * pathf->nb_pipes)))
+      if (84 == add_node_end(list, (pathf->nb_rooms * pathf->nb_pipes + 2)))
 	return (84);
       list->tail->path[0] = 0;
       list->tail->path[1] = pathf->tools[0][i];
       if (pathf->tools[0][i] == 1)
-	good_path(list, i, (pathf->nb_pipes * pathf->nb_rooms), all_path);
+	good_path(list, i, (pathf->nb_pipes * pathf->nb_rooms + 2), all_path);
       x = 0;
       while (pathf->tools[1][x] != -1)
 	{
 	  if (pathf->tools[1][x] == pathf->tools[0][i])
-	    good_path(list, 1, (pathf->nb_pipes * pathf->nb_rooms), all_path);
+	    good_path(list, 1, (pathf->nb_pipes * pathf->nb_rooms + 2), all_path);
 	  x++;
 	}
       i++;
@@ -116,7 +116,7 @@ static int	next_steps(t_list *list, t_list *all_path, t_pathf *pathf)
       x = 0;
       while (pathf->tools[tmp->path[i]][x] != -1) // je veux créé une new node pour tout les chemins ouvert à moi
 	{
-	  if (84 == add_node_end(list, (pathf->nb_pipes * pathf->nb_rooms)))// j'ai changé nb_rooms pour nb_pipes
+	  if (84 == add_node_end(list, (pathf->nb_pipes * pathf->nb_rooms + 2)))// j'ai changé nb_rooms pour nb_pipes
 	    return (84);
 	  if (84 == cp_path_and_add_one_pipe(tmp->path, list, pathf, pathf->tools[tmp->path[i]][x], all_path))
 	    return (84);
@@ -157,15 +157,15 @@ static double	*find(t_list *list, t_list *all_path, t_node *tmp, int *src, doubl
   new_cmp[1] = 1.0;
   while (tmp != NULL && x != nb_unique_path)
     {
-      printf("-> ");
-      display_tab(src);printf("\n | "); display_tab(tmp->path);printf(" <-\n");
+      //printf("-> ");
+      //display_tab(src);printf("\n | "); display_tab(tmp->path);printf(" <-\n");
       if (0 == (pass = int_tab_cmp(src, tmp->path)))
 	{
 	  new_cmp[0] += (double)tab_intlen(tmp->path);
 	  new_cmp[1] += 1.0;
 	  x++;
 	}
-      printf("PASS : %d\n\n", pass);
+      //      printf("PASS : %d\n\n", pass);
 	  
       tmp = tmp->next;
     }
@@ -202,17 +202,17 @@ static double	*lets_find_all_path(t_list *list, t_list *all_path, t_pathf *pathf
 
   first_step(list, all_path, pathf);
   next_steps(list, all_path, pathf);
-  my_display_list(list->head);
-  printf("\n");
-  my_display_list(all_path->head);
+  //  my_display_list(list->head);
+  //printf("\n");
+  //my_display_list(all_path->head);
   free_linked_list(list);
   nb_unique_path = (tab_intlen(pathf->tools[0]) >= tab_intlen(pathf->tools[1])) ?
     (tab_intlen(pathf->tools[1])) : (tab_intlen(pathf->tools[0]));
-  printf("---------------------------\n");
+  //printf("---------------------------\n");
   cmp = find_my_unique_path(list, all_path, pathf, nb_unique_path);
   if (cmp == NULL)
     return (NULL);
-  printf("---------------------------\n");
+  //printf("---------------------------\n");
   return (cmp);
 }
 

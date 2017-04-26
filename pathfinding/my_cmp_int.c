@@ -5,7 +5,7 @@
 ** Login   <vincent.larcher@epitech.eu>
 ** 
 ** Started on  Sun Apr 23 15:10:04 2017 LaFleche
-** Last update Tue Apr 25 22:59:50 2017 LaFleche
+** Last update Wed Apr 26 10:31:20 2017 LaFleche
 */
 
 #include <stdlib.h>
@@ -30,8 +30,8 @@ int		*my_cp_tab(int *src, int *dest)
   int		length;
 
   i = 0;
-  length = tab_intlen(src) + 1;
-  dest = clean_tab(dest, length);
+  //  length = tab_intlen(src) + 1;
+  //dest = clean_tab(dest, length);
   while (src[i] != -1)
     {
       dest[i] = src[i];

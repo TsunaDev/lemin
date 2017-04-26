@@ -5,19 +5,30 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Wed Apr 26 09:19:15 2017 Martin Van Elslande
+** Last update Wed Apr 26 15:24:44 2017 LaFleche
 */
 
 #include	"stock_tun.h"
 #include	"lemin.h"
 #include	"check_file.h"
 #include	"my_string.h"
+#include	"pathfinding.h"
 
 /*
 ** Toujours afficher même si le nbr fourmis n'est pas bon
 ** check si on doit skip ou arrêter la ligne pour le nbr de fourmis
 ** pas bon
 */
+
+static int	nb_rooms(t_room **room)
+{
+  int		i;
+
+  i = 0;
+  while (room[i] != NULL)
+    i++;
+  return (i);
+}
 
 static void	diplay_tun(int **tab)
 {
@@ -55,8 +66,8 @@ int		my_pars(char **arr)
   arr = check_nbr_room(room, arr);
   display_arr(arr);
   tab_tun = create_tab_int(room, arr);
-  diplay_tun(tab_tun);
-  paths = pathfinding();
+  //  diplay_tun(tab_tun);
+  paths = pathfinding(tab_tun, tab_tun[0][0], nb_rooms(room));
   display_shell(paths, room, nbr_ants);
   return (0);
 }
