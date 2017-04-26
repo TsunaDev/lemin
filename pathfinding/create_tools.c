@@ -5,7 +5,7 @@
 ** Login   <vincent.larcher@epitech.eu>
 ** 
 ** Started on  Sat Apr 22 14:38:09 2017 LaFleche
-** Last update Wed Apr 26 15:22:31 2017 LaFleche
+** Last update Wed Apr 26 15:51:03 2017 LaFleche
 */
 
 #include <stdlib.h>
@@ -133,8 +133,12 @@ int		**pathfinding(int **tab_pipes, int nb_pipes, int nb_rooms)
   tools = create_tools(nb_rooms, nb_pipes, tab_pipes);
   if (tools == NULL)
     return (NULL);
+  if (tools[0][0] == -1) //////////////////////////
+    exit(0);
+  if (tools[1][0] == -1) //////////////////////////
+    exit(0);
   //  exit(0);
-  //  printf("\n");
+  //   printf("\n");
   ret = find_all_path(tools, nb_rooms, nb_pipes);
   if (ret == NULL)
     return (NULL);
