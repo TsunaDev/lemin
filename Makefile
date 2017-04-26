@@ -5,7 +5,7 @@
 ## Login   <anais.breant@epitech.eu>
 ## 
 ## Started on  Tue Apr  4 17:10:32 2017 anaisbrnt
-## Last update Wed Apr 26 09:24:22 2017 Martin Van Elslande
+## Last update Wed Apr 26 15:17:32 2017 Martin Van Elslande
 ##
 
 NAME	=	lem_in
@@ -33,16 +33,18 @@ SRCS	=	src/main.c				\
 		src/parsing/my_swap_room.c		\
 		src/parsing/stock_tun/stock_tun.c	\
 		src/parsing/stock_tun/fill_tab_tun.c	\
+		src/parsing/stock_tun/delete_double.c	\
 		pathfinding/create_tools.c		\
 		pathfinding/find_all_path.c		\
 		pathfinding/my_linked_list_ft.c		\
 		pathfinding/my_cmp_int.c		\
 		pathfinding/get_tab_combination.c	\
-		display/src/display_shell.c
+		display/src/display_shell.c		\
+		display/src/display_graphical.c
 
 OBJS	=	$(SRCS:.c=.o)
 
-LDFLAGS	=	-Lsrc/lib_string -lstr
+LDFLAGS	=	-Lsrc/lib_string -lstr -lc_graph_prog_full
 
 all: $(NAME)
 

@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Tue Apr 25 15:01:46 2017 Martin Van Elslande
-** Last update Wed Apr 26 15:51:51 2017 LaFleche
+** Last update Wed Apr 26 15:57:29 2017 Martin Van Elslande
 */
 
 #include	<stdlib.h>
@@ -51,6 +51,7 @@ int	display_shell(int **paths, t_room **rooms, int ants)
   int	idx;
   int	*prev_idx;
   int	next;
+  int	check;
 
   i = 0;
   remaining = ants;
@@ -67,14 +68,17 @@ int	display_shell(int **paths, t_room **rooms, int ants)
       while (remaining > 0)
 	{
 	  i = 0;
+	  check = 0;
 	  while (i < ants)
-	    {      
+	    {
 	      if (ant_room[i] != 1)
 		{
 		  next = next_room(ant_room[i], paths[(i % paths[0][0]) + 1]);
 		  idx = get_actual_room(next, rooms);
 		  if (!rooms[idx]->full)
 		    {
+		      if (check != 0)
+			printf(" ");
 		      if (next != 1)
 			rooms[idx]->full = 1;
 		      if (ant_room[i] != 0)
@@ -82,7 +86,7 @@ int	display_shell(int **paths, t_room **rooms, int ants)
 		      prev_idx[i] = idx;
 		      ant_room[i] = next;
 		      printf("P%d-%s", i + 1, rooms[idx]->name);
-		      printf(" "); // Trouver un moyen de savoir que c'est le dernier
+		      check = 1;
 		      if (next == 1)
 			remaining--;
 		    }
