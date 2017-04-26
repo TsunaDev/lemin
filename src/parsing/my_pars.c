@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Wed Apr 26 15:46:47 2017 LaFleche
+** Last update Wed Apr 26 17:11:14 2017 Anaïs Breant
 */
 
 #include	"stock_tun.h"
@@ -52,6 +52,8 @@ int		my_pars(char **arr)
   int		size;
   int		**paths;
 
+  if (arr == NULL)
+    return (84);
   nbr_ants = check_file(arr);
   if (nbr_ants == -1)
     return (1);
