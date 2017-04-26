@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
 ** Started on  Fri Apr 21 12:09:47 2017 Glenn Gabriel Irakiza
-** Last update Fri Apr 21 12:58:38 2017 Glenn Gabriel Irakiza
+** Last update Wed Apr 26 12:10:28 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>
@@ -18,6 +18,18 @@ static void	my_swap_room(t_room **a, t_room **b)
   tmp = *a;
   *a = *b;
   *b = tmp;
+}
+
+void		change_type_name(t_room **room)
+{
+  int		i;
+
+  i = 0;
+  while (room[i] != NULL)
+    {
+      room[i]->type = i;
+      i++;
+    }
 }
 
 void		my_sort_room(t_room **room)
@@ -42,4 +54,5 @@ void		my_sort_room(t_room **room)
       else
 	i++;
     }
+  change_type_name(room);
 }
