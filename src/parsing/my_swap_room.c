@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
 ** Started on  Fri Apr 21 12:09:47 2017 Glenn Gabriel Irakiza
-** Last update Wed Apr 26 12:10:28 2017 Glenn Gabriel Irakiza
+** Last update Wed Apr 26 12:13:50 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>
@@ -27,7 +27,7 @@ void		change_type_name(t_room **room)
   i = 0;
   while (room[i] != NULL)
     {
-      room[i]->type = i;
+      room[i]->new_name = i;
       i++;
     }
 }
