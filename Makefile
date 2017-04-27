@@ -5,7 +5,7 @@
 ## Login   <anais.breant@epitech.eu>
 ## 
 ## Started on  Tue Apr  4 17:10:32 2017 anaisbrnt
-## Last update Wed Apr 26 16:09:09 2017 LaFleche
+## Last update Thu Apr 27 14:40:23 2017 Anaïs Breant
 ##
 
 NAME	=	lem_in
@@ -31,6 +31,7 @@ SRCS	=	src/main.c				\
 		src/parsing/check_nbr_room.c		\
 		src/parsing/delete_room_tunnel.c	\
 		src/parsing/my_swap_room.c		\
+		src/parsing/verif_pos_room.c		\
 		src/parsing/stock_tun/stock_tun.c	\
 		src/parsing/stock_tun/fill_tab_tun.c	\
 		src/parsing/stock_tun/delete_double.c	\

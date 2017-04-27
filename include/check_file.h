@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 19:45:19 2017 Anaïs Breant
-** Last update Tue Apr 25 17:45:35 2017 Anaïs Breant
+** Last update Thu Apr 27 14:42:30 2017 Anaïs Breant
 */
 
 #ifndef	CHECK_FILE_H_
@@ -20,6 +20,7 @@ char	**delete_room_tunnel(char **);
 char	**check_start_end(char **);
 char	**skip_bad_line(char **);
 char	**check_nbr_room(t_room **, char **);
+char	**verif_pos_room(char **);
 
 char	*epur_str_check(char *);
 

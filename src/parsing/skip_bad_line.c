@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 20:02:51 2017 Anaïs Breant
-** Last update Fri Apr 21 19:30:11 2017 Anaïs Breant
+** Last update Thu Apr 27 14:20:44 2017 Anaïs Breant
 */
 
 #include	<unistd.h>
@@ -81,6 +81,7 @@ char		**skip_bad_line(char **arr)
   int		cpt;
 
   cpt = 1;
+  arr = verif_pos_room(arr);
   while (arr[cpt] != NULL)
     {
       arr[cpt] = skip_comment(arr[cpt]);
