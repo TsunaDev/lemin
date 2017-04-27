@@ -5,12 +5,17 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 19:34:56 2017 Anaïs Breant
-** Last update Wed Apr 26 17:19:43 2017 Anaïs Breant
+** Last update Thu Apr 27 14:15:04 2017 Anaïs Breant
 */
 
 #include	<unistd.h>
 #include	"check_file.h"
 #include	"my_string.h"
+
+static char	**modif_arr(char **arr)
+{
+
+}
 
 int		check_file(char **arr)
 {
@@ -19,6 +24,7 @@ int		check_file(char **arr)
 
   if (arr == NULL)
     return (-1);
+  arr = modif_tab(arr);
   return_value = check_nbr_ants(arr[0]);
   if (return_value == -1)
     {
