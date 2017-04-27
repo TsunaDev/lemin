@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu@epitech.net>
 ** 
 ** Started on  Mon Jan  9 22:37:16 2017 Irakiz_g
-** Last update Tue Apr  4 17:32:08 2017 Glenn Gabriel Irakiza
+** Last update Tue Apr 25 15:46:25 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>
@@ -38,14 +38,14 @@ static char	*my_cpy(char *new, char *str)
     i++;
   while (str[i] != '\0')
     {
-      if (str[i] == '\t' || str[i] == ' ')
-	{
-	  new[b++] = ' ';
-	  while (str[i] != '\0' && (str[i] == ' ' || str[i] == '\t'))
-	    i++;
-	}
-      if (str[i] != ' ' && str[i] != '\t' && str[i] != '\0')
+      if ((str[i] == ' ' || str[i] == '\t') && str[i + 1] != '\0')
+	new[b++] = ' ';
+      while (str[i] != '\0' && (str[i] == ' ' || str[i] == '\t'))
+	i++;
+      if (str[i] != ' ' && str[i] != '\0')
 	new[b++] = str[i];
+      while (str[i] != '\0' && (str[i] == ' ' || str[i] == '\t'))
+	i++;
       if (str[i] != '\0')
 	i++;
     }
@@ -65,7 +65,7 @@ char		*my_epur_str(char *str)
   nb_char = my_nbchar(str);
   new = malloc(sizeof(char) * (nb_char + nb_words + 3));
   if (new == NULL)
-    exit(84);
+    return (NULL);
   new = my_cpy(new, str);
   return (new);
 }
