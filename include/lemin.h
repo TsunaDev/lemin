@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:25:21 2017 Glenn Gabriel Irakiza
-** Last update Tue Apr 25 16:31:13 2017 Glenn Gabriel Irakiza
+** Last update Thu Apr 27 12:11:48 2017 Glenn Gabriel Irakiza
 */
 
 #ifndef	LEMIN_H_
@@ -28,10 +28,5 @@ int			my_create_room(t_room **, char **);
 char			**open_file(int);
 int			my_pars(char **);
 int			nb_room(char **);
-
-/*
-** fonction à supprimer avant le rendu
-*/
-void			my_show_room(t_room **);
 
 # endif	/* !LEMIN_H_ */

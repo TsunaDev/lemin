@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Fri Apr 21 12:13:11 2017 Glenn Gabriel Irakiza
+** Last update Thu Apr 27 12:11:39 2017 Glenn Gabriel Irakiza
 */
 
 #include	"my_string.h"
@@ -25,19 +25,6 @@ void		my_free_room(t_room **arr)
       i++;
     }
   free(arr);
-}
-
-void		my_show_room(t_room **room)
-{
-  int		i;
-
-  i = 0;
-  while (room[i] != NULL)
-    {
-      printf("%s : %d - %d - %d\n", room[i]->name, room[i]->x,
-	     room[i]->y, room[i]->type);
-      i++;
-    }
 }
 
 int		nb_room(char **arr)
