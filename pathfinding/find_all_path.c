@@ -1,11 +1,11 @@
 /*
 ** find_all_path.c for lemin in /home/lafleche/semester_2/CPE_2016_Lemin/pathfinding
-** 
+**
 ** Made by LaFleche
 ** Login   <vincent.larcher@epitech.eu>
-** 
+**
 ** Started on  Sat Apr 22 19:19:26 2017 LaFleche
-** Last update Thu Apr 27 14:09:33 2017 LaFleche
+** Last update Thu Apr 27 15:13:49 2017 Anaïs Breant
 */
 
 #include <stdlib.h>
@@ -32,8 +32,11 @@ void            my_display_list(t_node *head)
 
 static int	good_path(t_list *list, int i, int length, t_list *all_path)
 {
-  i++;
-  list->tail->path[i] = 1;
+  /*  if (i != -1)
+    {
+      i++;
+      list->tail->path[i] = 1;
+      }*/
   if (84 == my_push_to_list_all_path(list, all_path, length))
     return (84);
   return (0);
@@ -77,12 +80,18 @@ static int	first_step(t_list *list, t_list *all_path, t_pathf *pathf)
       list->tail->path[0] = 0;
       list->tail->path[1] = pathf->tools[0][i];
       if (pathf->tools[0][i] == 1)
-	good_path(list, i, (pathf->nb_pipes * pathf->nb_rooms + 2), all_path);
+	good_path(list, -1, (pathf->nb_pipes * pathf->nb_rooms + 2), all_path);
       x = 0;
       while (pathf->tools[1][x] != -1)
 	{
 	  if (pathf->tools[1][x] == pathf->tools[0][i])
-	    good_path(list, 1, (pathf->nb_pipes * pathf->nb_rooms + 2), all_path);
+	    {
+	      if (list->tail == NULL)
+		exit(0);
+	      list->tail->path[2] = 1;
+	      list->tail->path[3] = -1;
+	      good_path(list, 1, (pathf->nb_pipes * pathf->nb_rooms + 2), all_path);
+	    }
 	  x++;
 	}
       i++;
@@ -159,7 +168,7 @@ static double	*find(t_node *tmp, int *src, double *cmp, int i, int nb_unique_pat
 	    return (my_cmp(cmp, new_cmp[0], new_cmp[1], i));
 	}
       //      printf("PASS : %d\n\n", pass);
-	  
+
       tmp = tmp->next;
     }
   return (my_cmp(cmp, new_cmp[0], new_cmp[1], i));
