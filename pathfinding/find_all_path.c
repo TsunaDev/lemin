@@ -5,7 +5,7 @@
 ** Login   <vincent.larcher@epitech.eu>
 ** 
 ** Started on  Sat Apr 22 19:19:26 2017 LaFleche
-** Last update Wed Apr 26 17:07:51 2017 LaFleche
+** Last update Thu Apr 27 14:09:33 2017 LaFleche
 */
 
 #include <stdlib.h>
@@ -110,9 +110,11 @@ static int	next_steps(t_list *list, t_list *all_path, t_pathf *pathf)
 	  if (84 == cp_path_and_add_one_pipe(tmp->path, list, pathf, pathf->tools[tmp->path[i]][x], all_path))
 	    return (84);
 	  x++;
-	}      
+	}
       tmp = tmp->next;
     }
+  if (all_path->head == NULL)
+    exit(0);
   return (0);
 }
 
@@ -144,7 +146,7 @@ static double	*find(t_node *tmp, int *src, double *cmp, int i, int nb_unique_pat
   x = 1;
   new_cmp[0] = (double)tab_intlen(src);
   new_cmp[1] = 1.0;
-  while (tmp != NULL && x != nb_unique_path)
+  while (tmp != NULL)
     {
       //printf("-> ");
       //display_tab(src);printf("\n | "); display_tab(tmp->path);printf(" <-\n");
@@ -153,6 +155,8 @@ static double	*find(t_node *tmp, int *src, double *cmp, int i, int nb_unique_pat
 	  new_cmp[0] += (double)tab_intlen(tmp->path);
 	  new_cmp[1] += 1.0;
 	  x++;
+	  if (x != nb_unique_path)
+	    return (my_cmp(cmp, new_cmp[0], new_cmp[1], i));
 	}
       //      printf("PASS : %d\n\n", pass);
 	  

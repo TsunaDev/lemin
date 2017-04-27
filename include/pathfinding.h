@@ -5,11 +5,11 @@
 ** Login   <vincent.larcher@epitech.eu>
 ** 
 ** Started on  Sat Apr 22 20:43:46 2017 LaFleche
-** Last update Wed Apr 26 17:07:27 2017 LaFleche
+** Last update Thu Apr 27 14:10:47 2017 LaFleche
 */
 
-#ifndef PATHFINDING_H
-# define PATHFINDING_H
+#ifndef PATHFINDING_H_
+# define PATHFINDING_H_
 
 # include <stdio.h> ///////////////////////////////
 
