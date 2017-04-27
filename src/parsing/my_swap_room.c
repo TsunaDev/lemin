@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
 ** Started on  Fri Apr 21 12:09:47 2017 Glenn Gabriel Irakiza
-** Last update Wed Apr 26 12:13:50 2017 Glenn Gabriel Irakiza
+** Last update Thu Apr 27 14:09:59 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>
@@ -23,11 +23,18 @@ static void	my_swap_room(t_room **a, t_room **b)
 void		change_type_name(t_room **room)
 {
   int		i;
+  int		name;
 
   i = 0;
+  name = 0;
   while (room[i] != NULL)
     {
-      room[i]->new_name = i;
+      if (room[i]->type != 0 && name == 0)
+	name += 2;
+      if (room[i]->type != 1 && name == 1)
+	name += 2;
+      room[i]->new_name = name;
+      name++;
       i++;
     }
 }
