@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu@epitech.net>
 **
 ** Started on  Thu Dec 29 19:04:04 2016 Irakiz_g
-** Last update Wed Apr 19 20:29:38 2017 Anaïs Breant
+** Last update Fri Apr 28 14:40:30 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdio.h>
@@ -81,7 +81,7 @@ static char	**my_tab_create(int nb_words, char **tab, char *epur)
       nb_char = my_nb_char(epur, i) + 1;
       tab[y] = malloc(sizeof(char) * nb_char);
       if (tab[y] == NULL)
-	exit(84);
+	return (NULL);
       i = my_cpy(tab[y], epur, i);
       y++;
     }
@@ -101,7 +101,7 @@ char		**my_str_to_wordtab_hyphen(char *str)
     return (NULL);
   tab = malloc(sizeof(char *) * (nb_words + 2));
   if (tab == NULL)
-    exit(84);
+    return (NULL);
   tab = my_tab_create(nb_words, tab, epur);
   free(epur);
   return (tab);

@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
 ** Started on  Wed Apr  5 16:13:59 2017 Glenn Gabriel Irakiza
-** Last update Thu Apr 27 13:53:38 2017 Glenn Gabriel Irakiza
+** Last update Fri Apr 28 14:39:18 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdio.h>
@@ -17,6 +17,8 @@ int		my_nb_words_char(char *str, char cmp, int i)
   int		b;
 
   b = 0;
+  if (str == NULL)
+    return (0);
   if (str[0] != cmp)
     b += 1;
   while (str[i] != '\0')
@@ -45,6 +47,7 @@ static int	nb_char_in_words_env(char *str, int pos, char cmp)
 
 static void	my_epur_tab(char ***arr)
 {
+
   char		*tmp;
   int		y;
   int		i;
@@ -56,7 +59,7 @@ static void	my_epur_tab(char ***arr)
     {
       tmp = my_epur_str((*arr)[y]);
       if (tmp == NULL)
-	exit (84);
+	return (NULL);
       len = my_strlen((*arr)[y]);
       free((*arr)[y]);
       if (len != 0)
@@ -83,7 +86,7 @@ static char	**my_tab_create(char **tab, char *str, char cmp, int size)
       tab[y] = malloc(sizeof(char) *
 		      (nb_char_in_words_env(str, i, cmp) + 1));
       if (tab[y] == NULL)
-	exit(84);
+	return (NULL);
       while (str[i] != cmp && str[i] != '\0')
 	tab[y][x++] = str[i++];
       tab[y][x] = '\0';
@@ -105,7 +108,7 @@ char		**my_strnchar_to_wordtab(char *str, char cmp)
   size = my_nb_words_char(str, cmp, 0);
   tab = malloc(sizeof(char *) * (size + 1));
   if (tab == NULL)
-    exit(84);
+    return (NULL);
   tab = my_tab_create(tab, str, cmp, size);
   my_epur_tab(&tab);
   return (tab);

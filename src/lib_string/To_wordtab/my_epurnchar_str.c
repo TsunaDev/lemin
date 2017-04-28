@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
 ** Started on  Wed Apr  5 16:13:46 2017 Glenn Gabriel Irakiza
-** Last update Wed Apr 19 12:27:35 2017 Glenn Gabriel Irakiza
+** Last update Fri Apr 28 14:35:37 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>
@@ -65,7 +65,7 @@ char		*my_epurnchar_str(char *str, char c)
   nb_char = my_nbchar(str, c);
   new = malloc(sizeof(char) * (nb_char + nb_words + 3));
   if (new == NULL)
-    exit(84);
+    return (NULL);
   new = my_cpy(new, str, c);
   return (new);
 }
