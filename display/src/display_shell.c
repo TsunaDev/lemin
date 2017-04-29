@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Tue Apr 25 15:01:46 2017 Martin Van Elslande
-** Last update Sat Apr 29 15:18:10 2017 Martin Van Elslande
+** Last update Sat Apr 29 15:29:14 2017 Martin Van Elslande
 */
 
 #include	<stdlib.h>
@@ -43,6 +43,20 @@ int	get_actual_room(int room, t_room **rooms)
   return (i);
 }
 
+void	one_pipe_loop(t_room **rooms, int nb_ants)
+{
+  int	i;
+  int	idx;
+
+  i = 0;
+  idx = get_actual_room(1, rooms);
+  while (i < nb_ants)
+    {
+      printf("P%d-%s\n", i + 1, rooms[idx]->name);
+      i++;
+    }
+}
+
 int	display_shell(int **paths, t_room **rooms, int ants)
 {
   int	*ant_room;
@@ -57,6 +71,8 @@ int	display_shell(int **paths, t_room **rooms, int ants)
   remaining = ants;
   if (!ants)
     printf("Insert message here");
+  else if (paths[1][0] == 0 && paths[1][1] == 1)
+    one_pipe_loop(rooms, ants);
   else
     {
       ant_room = malloc(sizeof(int) * ants);
