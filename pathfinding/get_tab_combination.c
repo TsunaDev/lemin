@@ -5,13 +5,13 @@
 ** Login   <vincent.larcher@epitech.eu>
 ** 
 ** Started on  Mon Apr 24 09:42:34 2017 LaFleche
-** Last update Fri Apr 28 23:22:35 2017 LaFleche
+** Last update Sat Apr 29 20:36:01 2017 LaFleche
 */
 
 #include <stdlib.h>
 #include "pathfinding.h"
 
-static void	clean_tab(int *tab, int length)
+/*static void	clean_tab(int *tab, int length)
 {
   int           i;
 
@@ -21,8 +21,8 @@ static void	clean_tab(int *tab, int length)
       tab[i] = -1;
       i++;
     }
-}
-  
+    }*/
+
 int   **print_comb_tab(t_node *tmp, int *src, int nb_unique_path, int **path_comb)
 {
   int           x;
@@ -43,6 +43,7 @@ int   **print_comb_tab(t_node *tmp, int *src, int nb_unique_path, int **path_com
 	}
       tmp = tmp->next;
     }
+  //path_comb[x + 1] = NULL;
   return (path_comb);
 }
 
@@ -66,14 +67,22 @@ int		**get_tab_combination(double *combination, t_list *all_path, t_pathf *pathf
   int		**path_comb;
   int		i;
 
-  i = 0;
-  path_comb = malloc(sizeof(int *) * ((int)combination[2] + 2));
+  i = 1;
+  //  printf("--------------<<<<<<<<<<<<<<<<<<<<<<<<< %d\n", ((int)combination[2]));
+  path_comb = malloc(sizeof(int *) * ((int)combination[2] + 3));
   if (path_comb == NULL)
     return (NULL);
   path_comb[0] = malloc(sizeof(int));
   if (path_comb[0] == NULL)
     return (NULL);
   path_comb[0][0] = (int)combination[2];
+
+  while (i != ((int)combination[2] + 3))
+    {
+      path_comb[i] = NULL;
+      i++;
+    }
+
   /*  while (i != (int)combination[2] + 1)
     {
       path_comb[i] = malloc(sizeof(int) * (pathf->nb_pipes * pathf->nb_rooms + 2));

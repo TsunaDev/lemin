@@ -5,7 +5,7 @@
 ** Login   <vincent.larcher@epitech.eu>
 ** 
 ** Started on  Sat Apr 22 14:38:09 2017 LaFleche
-** Last update Sat Apr 29 15:36:01 2017 LaFleche
+** Last update Sat Apr 29 20:35:21 2017 LaFleche
 */
 
 #include <stdlib.h>
@@ -59,7 +59,7 @@ static int		**fill_my_tools(int **tools, int nb_rooms, int nb_pipes, int **tab)
   int		size;
 
   i = 0;
-  printf("--start tools\n");
+  //  printf("--start tools\n");
   while (i != nb_rooms)
     {
       size = my_malloc_size(i, nb_pipes, tab) + 1;
@@ -71,13 +71,13 @@ static int		**fill_my_tools(int **tools, int nb_rooms, int nb_pipes, int **tab)
       j = 0;
       while (tools[i][j] != -1)
 	{
-	  printf("%d ", tools[i][j]);
+	  //  printf("%d ", tools[i][j]);
 	  j++;
 	}
-      printf("\n");
+      //  printf("\n");
       i++;
     }
-  printf("--end tools\n");
+  //  printf("--end tools\n");
   return (tools);
 }
 
@@ -110,22 +110,24 @@ int		**pathfinding(int **tab_pipes, int nb_pipes, int nb_rooms)
   if (tools[1][0] == -1) //////////////////////////
     exit(0);
   //  exit(0);
-  printf("\n");
+  ///printf("\n");
   ret = find_all_path(tools, nb_rooms, nb_pipes);
-    if (ret == NULL)
+  if (ret == NULL)
     return (NULL);
-    printf("\n\n---->%d\n", ret[0][0]);
-    while (i != (ret[0][0] + 1))
+  //printf("\n\n---->%d\n", ret[0][0]);
+  while (ret[i] != NULL)//(i != (ret[0][0] + 1))
     {
-      x = 0;
+      /* x = 0;
       while (ret[i][x] != -1)
 	{
 	  printf("%d ", ret[i][x]);
 	  x++;
 	}
-      printf("\n");
+	printf("\n");*/
       i++;
     }
-    exit(0);
+  ret[0][0] = i - 1;
+  //  printf("\n\n---->%d\n", ret[0][0]);
+  //exit(0);
   return (ret);
 }

@@ -5,7 +5,7 @@
 ** Login   <vincent.larcher@epitech.eu>
 ** 
 ** Started on  Sat Apr 22 19:19:26 2017 LaFleche
-** Last update Sat Apr 29 15:53:04 2017 LaFleche
+** Last update Sat Apr 29 20:34:47 2017 LaFleche
 */
 
 #include <stdlib.h>
@@ -48,7 +48,7 @@ static int	good_path(t_list *list, int i, int length, t_list *all_path)
   static int	limit = 0;
 
   limit++;
-  printf("limit : %d -------\n", limit);
+  //  printf("limit : %d -------\n", limit);
   if (limit == 11)
     return (1);
   if (i != 0)
@@ -56,13 +56,13 @@ static int	good_path(t_list *list, int i, int length, t_list *all_path)
       i++;
       list->tail->path[i] = 1;
     }
-  printf("****\n");
-  display_tab(list->tail->path);
-   printf("****\n");
+  /// printf("****\n");
+  //display_tab(list->tail->path);
+  //printf("****\n");
   if (84 == my_push_to_list_all_path(list, all_path, length))//////// segfault
     return (84);
   //printf("HI\n");
-  display_tab(all_path->tail->path);
+  //display_tab(all_path->tail->path);
   return (0);
 }
 
@@ -102,6 +102,11 @@ static int	first_step(t_list *list, t_list *all_path, t_pathf *pathf, int i)
 	return (84);
       list->tail->path[0] = 0;
       list->tail->path[1] = pathf->tools[0][i];
+      if (pathf->tools[0][i] == 1)
+	{
+	  good_path(list, 0, (pathf->nb_pipes * pathf->nb_rooms + 2), all_path);
+	  return (1);
+	}
       //printf("(%d   %d)\n", list->tail->path[0], list->tail->path[1]);
       x = 0;
       yolo = 0;
@@ -124,9 +129,6 @@ static int	first_step(t_list *list, t_list *all_path, t_pathf *pathf, int i)
 	    }
 	  x++;
 	}
-      if (pathf->tools[0][i] == 1)
-	if (1 == good_path(list, 0, (pathf->nb_pipes * pathf->nb_rooms + 2), all_path))
-	return (1);
       i++;
     }
   return (0);
@@ -192,19 +194,23 @@ static double	*find(t_node *tmp, int *src, double *cmp, int i, int nb_unique_pat
   new_cmp[1] = 1.0;
   while (tmp != NULL)
     {
-      //printf("-> ");
+      //      printf("-> ");
       //display_tab(src);printf("\n | "); display_tab(tmp->path);printf(" <-\n");
       if (0 == (pass = int_tab_cmp(src, tmp->path)))
 	{
 	  new_cmp[0] += (double)tab_intlen(tmp->path);
 	  new_cmp[1] += 1.0;
+	  //printf("____/////nb_path: %f\n\n", pass, new_cmp[1]);
 	  x++;
+	  //  printf("PASS3 : %d nb_path : %f\n\n", pass, new_cmp[1]);
+	  //display_tab(src);	  
 	  if (x != nb_unique_path)
 	    return (my_cmp(cmp, new_cmp[0], new_cmp[1], i));
 	}
-      //      printf("PASS : %d\n\n", pass);	  
+      //printf("PASS : %d nb_path : %f\n\n", pass, new_cmp[1]);
       tmp = tmp->next;
     }
+  //printf("PASS2 : %d nb_path : %f\n\n", pass, new_cmp[1]);
   return (my_cmp(cmp, new_cmp[0], new_cmp[1], i));
 }
 
@@ -228,6 +234,7 @@ static double	*find_my_unique_path(t_list *all_path, int nb_unique_path)
       i++;
       tmp = tmp->next;
     }
+  //  printf("------------------> nb_room :%f, nb_path :%f\n", cmp[1], cmp[2]);
   return (cmp);
 }
 
@@ -235,16 +242,20 @@ static double	*lets_find_all_path(t_list *list, t_list *all_path, t_pathf *pathf
 {
   int		nb_unique_path;
   double	*cmp;
+  int		ret;
 
   nb_unique_path = (tab_intlen(pathf->tools[0]) >= tab_intlen(pathf->tools[1])) ?
     (tab_intlen(pathf->tools[1])) : (tab_intlen(pathf->tools[0]));
-  if (1 != first_step(list, all_path, pathf, 0))
+  ret = first_step(list, all_path, pathf, 0);
+  if (ret != 1)
     next_steps(list, all_path, pathf);
-  printf("-----------------------------\n");
+  //  if (ret == 2)
+  //return (0_to_1());
+  /*  printf("-----------------------------\n");
   my_display_list(list->head);
   printf("-----------------------------\n");
   my_display_list(all_path->head);
-  printf("-----------------------------\n");
+  printf("-----------------------------\n");*/
   //free_linked_list(list);
   //  nb_unique_path = (tab_intlen(pathf->tools[0]) >= tab_intlen(pathf->tools[1])) ?
   //(tab_intlen(pathf->tools[1])) : (tab_intlen(pathf->tools[0]));
