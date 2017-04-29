@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 19:34:56 2017 Anaïs Breant
-** Last update Fri Apr 28 15:12:33 2017 Glenn Gabriel Irakiza
+** Last update Sat Apr 29 15:32:20 2017 Glenn Gabriel Irakiza
 */
 
 #include	<unistd.h>
@@ -52,8 +52,15 @@ static int	my_change_arr(char **arr)
 
 static int	my_strcmp_rev(char *str, char *cmp)
 {
+  char		**ddouble;
+  int		opt;
   int		bool;
 
+  ddouble = my_strnchar_to_wordtab(cmp, '-');
+  opt = my_strcmp(ddouble[0], ddouble[1]);
+  my_free_array(ddouble);
+  if (opt == 0)
+    return (0);
   my_revstr(cmp);
   bool = my_strcmp(str, cmp);
   my_revstr(cmp);
@@ -62,29 +69,30 @@ static int	my_strcmp_rev(char *str, char *cmp)
 
 void		suppr_double_tun(char **arr)
 {
-  int		y;
+  int		y[2];
   int		cmp;
-  int		words;
+  int		words[2];
 
-  y = 0;
-  while (arr[y] != NULL)
+  y[0] = 0;
+  while (arr[y[0]] != NULL)
     {
-      words = my_nb_words_char(arr[y], '-', 0);
-      if (words == 2 && arr[y + 1] != NULL)
+      y[1] = 0;
+      while (arr[y[1]] != NULL)
 	{
-	  if (arr[y][0] == arr[y][2])
+	  words[0] = my_nb_words_char(arr[y[0]], '-', 0);
+	  words[1] = my_nb_words_char(arr[y[1]], '-', 0);
+	  if (words[0] == 2 && words[1] == 2 && (y[0] != y[1]))
 	    {
-	      free(arr[y]);
-	      arr[y] = my_strdup("");
+	      cmp = my_strcmp_rev(arr[y[1]], arr[y[0]]);
+	      if (cmp == 0)
+		{
+		  free(arr[y[0]]);
+		  arr[y[0]] = my_strdup("");
+		}
 	    }
-	  cmp = my_strcmp_rev(arr[y], arr[y + 1]);
-	  if (cmp == 0)
-	    {
-	      free(arr[y]);
-	      arr[y] = my_strdup("");
-	    }
+	  y[1]++;
 	}
-      y++;
+      y[0]++;
     }
 }
 
