@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Tue Apr 25 15:01:46 2017 Martin Van Elslande
-** Last update Wed Apr 26 15:57:29 2017 Martin Van Elslande
+** Last update Wed Apr 26 18:29:21 2017 Martin Van Elslande
 */
 
 #include	<stdlib.h>
@@ -86,6 +86,7 @@ int	display_shell(int **paths, t_room **rooms, int ants)
 		      prev_idx[i] = idx;
 		      ant_room[i] = next;
 		      printf("P%d-%s", i + 1, rooms[idx]->name);
+		      printf("%d\n", next);
 		      check = 1;
 		      if (next == 1)
 			remaining--;
@@ -93,7 +94,10 @@ int	display_shell(int **paths, t_room **rooms, int ants)
 		}
 	      i++;
 	    }
-	  printf("\n");
+	  if (check == 1)
+	    printf("\n");
+	  else
+	    printf("%d\n", remaining);
 	}
     }
   return (0);
