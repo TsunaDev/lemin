@@ -5,7 +5,7 @@
 ** Login   <vincent.larcher@epitech.eu>
 ** 
 ** Started on  Sat Apr 22 20:43:46 2017 LaFleche
-** Last update Thu Apr 27 14:10:47 2017 LaFleche
+** Last update Fri Apr 28 02:42:57 2017 LaFleche
 */
 
 #ifndef PATHFINDING_H_
@@ -43,7 +43,7 @@ int		int_cmp(int *, int);
 int		int_tab_cmp(int *, int *);
 int		tab_intlen(int *);
 int		*my_cp_tab(int *, int *);
-int		**get_tab_combination(double *, t_list *);
+int		**get_tab_combination(double *, t_list *, t_pathf *);
 int		**pathfinding(int **, int, int);
 
 

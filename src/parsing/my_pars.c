@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Thu Apr 27 15:23:16 2017 Anaïs Breant
+** Last update Sat Apr 29 14:00:08 2017 LaFleche
 */
 
 #include	"stock_tun.h"
@@ -38,8 +38,8 @@ static void	diplay_tun(int **tab)
   printf("%d\n", tab[0][0]);
   while (cpt <= tab[0][0])
     {
-      printf("%d", tab[cpt][0]);
-      printf("%d\n", tab[cpt][1]);
+      printf("(%d-", tab[cpt][0]);
+      printf("%d)\n", tab[cpt][1]);
       cpt++;
     }
 }
@@ -68,9 +68,10 @@ int		my_pars(char **arr)
   arr = check_nbr_room(room, arr);
   display_arr(arr);
   tab_tun = create_tab_int(room, arr);
-  //diplay_tun(tab_tun);
-  exit(0);
+  // diplay_tun(tab_tun);
+
   paths = pathfinding(tab_tun, tab_tun[0][0], nb_rooms(room));
+  //  exit(0);
   display_shell(paths, room, nbr_ants);
   return (0);
 }

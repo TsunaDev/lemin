@@ -5,7 +5,7 @@
 ** Login   <vincent.larcher@epitech.eu>
 ** 
 ** Started on  Sun Apr 23 15:10:04 2017 LaFleche
-** Last update Wed Apr 26 16:59:04 2017 LaFleche
+** Last update Sat Apr 29 01:03:50 2017 LaFleche
 */
 
 #include <stdlib.h>
@@ -23,6 +23,7 @@ int		*my_cp_tab(int *src, int *dest)
       dest[i] = src[i];
       i++;
     }
+  dest[i] = -1;
   return (dest);
 }
 
