@@ -5,7 +5,7 @@
 ** Login   <vincent.larcher@epitech.eu>
 ** 
 ** Started on  Sat Apr 22 19:19:26 2017 LaFleche
-** Last update Sat Apr 29 13:58:26 2017 LaFleche
+** Last update Sat Apr 29 15:53:04 2017 LaFleche
 */
 
 #include <stdlib.h>
@@ -48,7 +48,7 @@ static int	good_path(t_list *list, int i, int length, t_list *all_path)
   static int	limit = 0;
 
   limit++;
-  //  printf("limit : %d -------\n", limit);
+  printf("limit : %d -------\n", limit);
   if (limit == 11)
     return (1);
   if (i != 0)
@@ -56,13 +56,13 @@ static int	good_path(t_list *list, int i, int length, t_list *all_path)
       i++;
       list->tail->path[i] = 1;
     }
-  //printf("****\n");
-  // display_tab(list->tail->path);
-  // printf("****\n");
+  printf("****\n");
+  display_tab(list->tail->path);
+   printf("****\n");
   if (84 == my_push_to_list_all_path(list, all_path, length))//////// segfault
     return (84);
   //printf("HI\n");
-  //display_tab(all_path->tail->path);
+  display_tab(all_path->tail->path);
   return (0);
 }
 
@@ -126,8 +126,7 @@ static int	first_step(t_list *list, t_list *all_path, t_pathf *pathf, int i)
 	}
       if (pathf->tools[0][i] == 1)
 	if (1 == good_path(list, 0, (pathf->nb_pipes * pathf->nb_rooms + 2), all_path))
-	  return (1);
-      
+	return (1);
       i++;
     }
   return (0);
@@ -158,6 +157,8 @@ static int	next_steps(t_list *list, t_list *all_path, t_pathf *pathf)
 	}
       tmp = tmp->next;
     }
+  if (all_path->head == NULL)
+    exit(0); ////////////////// pas de chemin vers la sortie
   return (0);
 }
 
@@ -239,11 +240,11 @@ static double	*lets_find_all_path(t_list *list, t_list *all_path, t_pathf *pathf
     (tab_intlen(pathf->tools[1])) : (tab_intlen(pathf->tools[0]));
   if (1 != first_step(list, all_path, pathf, 0))
     next_steps(list, all_path, pathf);
-  /*  printf("-----------------------------\n");
+  printf("-----------------------------\n");
   my_display_list(list->head);
   printf("-----------------------------\n");
   my_display_list(all_path->head);
-  printf("-----------------------------\n");*/
+  printf("-----------------------------\n");
   //free_linked_list(list);
   //  nb_unique_path = (tab_intlen(pathf->tools[0]) >= tab_intlen(pathf->tools[1])) ?
   //(tab_intlen(pathf->tools[1])) : (tab_intlen(pathf->tools[0]));
