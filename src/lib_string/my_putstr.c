@@ -1,23 +1,41 @@
 /*
-** my_putstr.c for my_putstr.c in /home/gaby/projet_Epitech/CPE/CPE_2016_corewar/asm_corewar/lib_string
+** my_putstr.c for lem-in in /home/tsuna/Epitech/projects/prog_elem/lemin/CPE_2016_Lemin
 ** 
-** Made by Glenn Gabriel Irakiza
-** Login   <glenn-gabriel.irakiza@epitech.eu>
+** Made by Martin Van Elslande
+** Login   <martin.van-elslande@epitech.eu>
 ** 
-** Started on  Sat Mar 25 16:34:29 2017 Glenn Gabriel Irakiza
-** Last update Mon Apr 10 09:50:26 2017 Glenn Gabriel Irakiza
+** Started on  Sat Apr 29 16:33:33 2017 Martin Van Elslande
+** Last update Sat Apr 29 16:33:38 2017 Martin Van Elslande
 */
 
-#include	<stdlib.h>
 #include	<unistd.h>
+#include	<stdarg.h>
 #include	"my_string.h"
 
-void		my_putstr(int fd, char *str)
+int		my_putstr(int out, char *str, ...)
 {
-  int		len;
+  va_list	ap;
+  int		i;
+  char		*arg;
 
-  if (str == NULL)
-    return ;
-  len = my_strlen(str);
-  write(fd, str, len);
+  va_start(ap, str);
+  i = 0;
+  while (str[i])
+    {
+      if (match("%d*", &str[i]))
+	{
+	  my_putnbr(va_arg(ap, int));
+	  i++;
+	}
+      else if (match("%s*", &str[i]))
+	{
+	  arg = va_arg(ap, char *);
+	  write(out, arg, my_strlen(arg));
+	  i++;
+	}
+      else
+	write(out, &str[i], 1);
+      i++;
+    }
+  return ((out == 2) ? 84 : 0);
 }

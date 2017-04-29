@@ -5,10 +5,12 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Tue Apr 25 15:01:46 2017 Martin Van Elslande
-** Last update Sat Apr 29 15:29:14 2017 Martin Van Elslande
+** Last update Sat Apr 29 16:36:42 2017 Martin Van Elslande
 */
 
 #include	<stdlib.h>
+#include	<unistd.h>
+#include	"my_string.h"
 #include	"lemin.h"
 
 void	memset_int_array(int *arr, int size, int def)
@@ -52,7 +54,7 @@ void	one_pipe_loop(t_room **rooms, int nb_ants)
   idx = get_actual_room(1, rooms);
   while (i < nb_ants)
     {
-      printf("P%d-%s\n", i + 1, rooms[idx]->name);
+      my_putstr(1, "P%d-%s\n", i + 1, rooms[idx]->name);
       i++;
     }
 }
@@ -70,7 +72,7 @@ int	display_shell(int **paths, t_room **rooms, int ants)
   i = 0;
   remaining = ants;
   if (!ants)
-    printf("Insert message here");
+    my_putstr(1, "No ants in the hill\n");
   else if (paths[1][0] == 0 && paths[1][1] == 1)
     one_pipe_loop(rooms, ants);
   else
@@ -94,14 +96,14 @@ int	display_shell(int **paths, t_room **rooms, int ants)
 		  if (!rooms[idx]->full)
 		    {
 		      if (check != 0)
-			printf(" ");
+			write(1, " ", 1);
 		      if (next != 1)
 			rooms[idx]->full = 1;
 		      if (ant_room[i] != 0)
 			rooms[prev_idx[i]]->full = 0;
 		      prev_idx[i] = idx;
 		      ant_room[i] = next;
-		      printf("P%d-%s", i + 1, rooms[idx]->name);
+		      my_putstr(1, "P%d-%s", i + 1, rooms[idx]->name);
 		      check = 1;
 		      if (next == 1)
 			remaining--;
@@ -110,7 +112,7 @@ int	display_shell(int **paths, t_room **rooms, int ants)
 	      i++;
 	    }
 	  if (check == 1)
-	    printf("\n");
+	    write(1, "\n", 1);
 	}
     }
   return (0);

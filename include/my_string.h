@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Sun Mar 12 12:04:03 2017 Glenn Gabriel Irakiza
-** Last update Wed Apr 19 18:35:16 2017 Glenn Gabriel Irakiza
+** Last update Sat Apr 29 16:35:41 2017 Martin Van Elslande
 */
 
 #ifndef	MY_STRING_H_
@@ -18,7 +18,6 @@ void		my_putchar(int, char);
 void		my_free_array(char **);
 void		my_showtab(char **);
 void		my_revstr(char *);
-void		my_putstr(int, char *);
 
 char		*get_next_line(int);
 char		*my_epur_str(char *);
@@ -48,5 +47,8 @@ int		my_strncmp(char *, char *, int);
 int		my_strcmp(char *, char *);
 int		my_isnum(char *);
 int		my_getnbr(char *);
+int		my_putnbr(int);
+int		my_putstr(int, char *, ...);
+int		match(char *, char *);
 
 # endif /* !MY_STRING_H_ */

@@ -5,7 +5,7 @@
 ## Login   <irakiz_g@epitech.net>
 ## 
 ## Started on  Mon Nov  7 10:40:19 2016 gabriel irakiza
-## Last update Wed Apr 19 20:27:31 2017 Anaïs Breant
+## Last update Sat Apr 29 16:28:10 2017 Martin Van Elslande
 ##
 
 NAME	=	libstr.a
@@ -28,6 +28,8 @@ SRC	=	my_isnum.c				\
 		my_getnbr.c				\
 		my_revstr.c				\
 		my_swap.c				\
+		my_putnbr.c				\
+		match.c					\
 		To_wordtab/to_wordtab_to_str.c		\
 		To_wordtab/my_epurstr.c			\
 		To_wordtab/my_epurnchar_str.c		\
@@ -39,7 +41,7 @@ OBJS	=	$(SRC:.c=.o)
 
 INCLUDE	=	-I../../include/
 
-CFLAGS	=	-W -Wall -Wextra -ansi -pedantic -g $(INCLUDE)
+CFLAGS	=	-W -Wall -Wextra -ansi -pedantic $(INCLUDE)
 
 all: $(NAME)
 
