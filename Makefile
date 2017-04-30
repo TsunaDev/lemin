@@ -5,7 +5,7 @@
 ## Login   <anais.breant@epitech.eu>
 ## 
 ## Started on  Tue Apr  4 17:10:32 2017 anaisbrnt
-## Last update Sun Apr 30 16:09:26 2017 Martin Van Elslande
+## Last update Sun Apr 30 16:00:34 2017 Glenn Gabriel Irakiza
 ##
 
 NAME	=	lem_in
@@ -14,6 +14,7 @@ CFLAGS	=	-Wall -Wextra
 CFLAGS	+=	-Iinclude
 
 SRCS	=	src/main.c				\
+		src/parsing/skip_line_void.c		\
 		src/parsing/open_file.c			\
 		src/parsing/my_pars.c			\
 		src/parsing/create_room.c		\
