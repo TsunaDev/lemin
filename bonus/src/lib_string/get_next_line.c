@@ -1,11 +1,11 @@
 /*
-** get_next_line.c for get_next_line.c in /home/gaby/projet_Epitech/CPE/CPE_2016_getnextline
+** get_next_line.c for get_next_line.c in /home/gaby/projet_Epitech/CPE/CPE_2016_Lemin/src/lib_string
 ** 
-** Made by Irakiz_g
-** Login   <glenn-gabriel.irakiza@epitech.eu@epitech.net>
+** Made by Glenn Gabriel Irakiza
+** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
-** Started on  Thu Jan  5 12:46:50 2017 Irakiz_g
-** Last update Sat Mar 25 17:55:36 2017 Glenn Gabriel Irakiza
+** Started on  Sun Apr 30 19:50:30 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 19:50:31 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>

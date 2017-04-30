@@ -1,11 +1,11 @@
 /*
-** my_strcat.c for my_strcat.c in /home/gaby/projet_Epitech/PSU/PSU_2016_my_ls/src
-**
-** Made by Irakiz_g
-** Login   <glenn-gabriel.irakiza@epitech.eu@epitech.net>
-**
-** Started on  Thu Dec  1 10:52:14 2016 Irakiz_g
-** Last update Sun Apr 30 13:38:51 2017 LaFleche
+** my_strcat.c for my_strcat.c in /home/gaby/projet_Epitech/CPE/CPE_2016_Lemin/src/lib_string
+** 
+** Made by Glenn Gabriel Irakiza
+** Login   <glenn-gabriel.irakiza@epitech.eu>
+** 
+** Started on  Sun Apr 30 19:51:54 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 19:51:55 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>

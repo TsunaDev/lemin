@@ -1,11 +1,11 @@
 /*
-** my_epurnchar_str.c for my_epurnchar_str.c in /home/gaby/projet_Epitech/PSU/minishell2/PSU_2016_minishell2/src/lib_string/To_wordtab
+** my_epurnchar_str.c for my_epurnchar_str.c in /home/gaby/projet_Epitech/CPE/CPE_2016_Lemin/src/lib_string/To_wordtab
 ** 
 ** Made by Glenn Gabriel Irakiza
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
-** Started on  Wed Apr  5 16:13:46 2017 Glenn Gabriel Irakiza
-** Last update Fri Apr 28 14:35:37 2017 Glenn Gabriel Irakiza
+** Started on  Sun Apr 30 19:55:04 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 19:55:07 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>

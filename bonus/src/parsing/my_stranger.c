@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Fri Apr 21 14:19:39 2017 Anaïs Breant
-** Last update Fri Apr 21 17:07:44 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 19:48:44 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>
@@ -50,21 +50,16 @@ static void	my_stop_read(char **arr, int cpt)
 
 int		my_stranger(char **arr)
 {
+  int		cmp[2];
   int		return_value;
   int		cpt;
 
   cpt = 0;
   while (arr[cpt] != NULL)
     {
-      return_value = my_strcmp(arr[cpt], "##start");
-      if (return_value == 0)
-	{
-	  return_value = compare_next_start_end(arr, &cpt);
-	  if (return_value == 1)
-	    my_stop_read(arr, cpt);
-	}
-      return_value = my_strcmp(arr[cpt], "##end");
-      if (return_value == 0)
+      cmp[0] = my_strcmp(arr[cpt], "##start");
+      cmp[1] = my_strcmp(arr[cpt], "##end");
+      if (cmp[0] == 0 || cmp[1] == 0)
 	{
 	  return_value = compare_next_start_end(arr, &cpt);
 	  if (return_value == 1)

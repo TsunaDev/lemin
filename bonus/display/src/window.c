@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Sun Apr 30 20:37:16 2017 Martin Van Elslande
-** Last update Sun Apr 30 21:00:15 2017 Martin Van Elslande
+** Last update Sun Apr 30 22:16:11 2017 Martin Van Elslande
 */
 
 #include		<stdlib.h>
@@ -19,12 +19,14 @@ t_my_framebuffer        *my_framebuffer_create(int width, int height)
   t_my_framebuffer      *framebuffer;
 
   i = 0;
-  if ((framebuffer = malloc(sizeof(t_my_framebuffer))) == NULL)
+  framebuffer = malloc(sizeof(t_my_framebuffer));
+  if (!framebuffer)
     return (NULL);
   framebuffer->width = width;
   framebuffer->height = height;
-  if ((framebuffer->pixels = malloc
-       (width * height * 4 * sizeof(framebuffer->pixels))) == NULL)
+  framebuffer->pixels = malloc(width * height * 4 *
+			       sizeof(framebuffer->pixels));
+  if (!framebuffer->pixels)
     return (NULL);
   while (i < width * height * 4)
     {

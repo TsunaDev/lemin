@@ -1,11 +1,11 @@
 /*
-** my_strnchar_to_wordtab.c for my_strnchar_to_wordtab.c in /home/gaby/projet_Epitech/PSU/minishell2/PSU_2016_minishell2
+** my_strnchar_to_wordtab.c for my_strnchar_to_wordtab.c in /home/gaby/projet_Epitech/CPE/CPE_2016_Lemin/src/lib_string/To_wordtab
 ** 
 ** Made by Glenn Gabriel Irakiza
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
-** Started on  Wed Apr  5 16:13:59 2017 Glenn Gabriel Irakiza
-** Last update Sun Apr 30 13:29:17 2017 LaFleche
+** Started on  Sun Apr 30 19:55:36 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 19:55:37 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>

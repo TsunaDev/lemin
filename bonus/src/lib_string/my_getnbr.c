@@ -1,11 +1,11 @@
 /*
-** my_getnbr.c for my_getnbr in /home/Zerty10/delivery/CPool_Day07/lib
+** my_getnbr.c for my_getnbr.c in /home/gaby/projet_Epitech/CPE/CPE_2016_Lemin/src/lib_string
 ** 
-** Made by Quentin Gandon
-** Login   <Zerty10@epitech.net>
+** Made by Glenn Gabriel Irakiza
+** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
-** Started on  Tue Oct 11 09:47:16 2016 Quentin Gandon
-** Last update Fri Nov 25 09:19:03 2016 Quentin Gandon
+** Started on  Sun Apr 30 19:50:41 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 19:50:42 2017 Glenn Gabriel Irakiza
 */
 
 int	getplus(int final, char *str, int i)

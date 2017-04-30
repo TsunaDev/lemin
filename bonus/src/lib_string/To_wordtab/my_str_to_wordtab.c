@@ -1,11 +1,11 @@
 /*
-** my_str_to_wordtab.c for my_str_to_wordtab.c in /home/gaby/projet_Epitech/Perso/str_to_wordtab
+** my_str_to_wordtab.c for my_str_to_wordtab.c in /home/gaby/projet_Epitech/CPE/CPE_2016_Lemin/src/lib_string/To_wordtab
 ** 
-** Made by Irakiz_g
-** Login   <glenn-gabriel.irakiza@epitech.eu@epitech.net>
+** Made by Glenn Gabriel Irakiza
+** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
-** Started on  Thu Dec 29 19:04:04 2016 Irakiz_g
-** Last update Sun Apr 30 13:24:54 2017 LaFleche
+** Started on  Sun Apr 30 19:55:49 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 19:55:50 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>

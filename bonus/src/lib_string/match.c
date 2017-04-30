@@ -5,7 +5,7 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Sat Apr 29 16:34:20 2017 Martin Van Elslande
-** Last update Sat Apr 29 16:34:23 2017 Martin Van Elslande
+** Last update Sun Apr 30 22:18:20 2017 Martin Van Elslande
 */
 
 int	skip_wildcard(char *str, char *str2, int *count)

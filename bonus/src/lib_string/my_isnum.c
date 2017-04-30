@@ -1,11 +1,11 @@
 /*
-** my_isnum.c for my_isnum.c in /home/irakiz_g/delivery/CPE_2016_Pushswap/src
+** my_isnum.c for my_isnum.c in /home/gaby/projet_Epitech/CPE/CPE_2016_Lemin/src/lib_string
 ** 
-** Made by gabriel irakiza
-** Login   <irakiz_g@epitech.net>
+** Made by Glenn Gabriel Irakiza
+** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
-** Started on  Wed Nov  9 17:35:21 2016 gabriel irakiza
-** Last update Sun Apr 30 13:37:17 2017 LaFleche
+** Started on  Sun Apr 30 19:50:53 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 19:50:54 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>
