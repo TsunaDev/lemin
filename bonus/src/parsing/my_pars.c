@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Sun Apr 30 20:28:48 2017 LaFleche
+** Last update Sun Apr 30 21:36:01 2017 Martin Van Elslande
 */
 
 #include	"stock_tun.h"
@@ -13,8 +13,6 @@
 #include	"check_file.h"
 #include	"my_string.h"
 #include	"pathfinding.h"
-
-
 
 static int	nb_of_rooms(t_room **room)
 {

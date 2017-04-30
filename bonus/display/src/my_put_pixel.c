@@ -5,10 +5,11 @@
 ** Login   <martin.van-elslande@epitech.eu>
 ** 
 ** Started on  Sun Apr 30 03:05:16 2017 Martin Van Elslande
-** Last update Sun Apr 30 03:33:23 2017 Martin Van Elslande
+** Last update Sun Apr 30 20:59:53 2017 Martin Van Elslande
 */
 
 #include		<SFML/Graphics.h>
+#include		"lemin.h"
 #include		"graph.h"
 
 void	my_put_pixel(t_my_framebuffer *framebuffer, int x, int y,

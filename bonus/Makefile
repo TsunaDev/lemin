@@ -5,7 +5,7 @@
 ## Login   <anais.breant@epitech.eu>
 ## 
 ## Started on  Tue Apr  4 17:10:32 2017 anaisbrnt
-## Last update Sun Apr 30 16:55:37 2017 Martin Van Elslande
+## Last update Sun Apr 30 21:30:32 2017 Martin Van Elslande
 ##
 
 NAME	=	lem_in
@@ -44,7 +44,10 @@ SRCS	=	src/main.c				\
 		display/src/display_graphical.c		\
 		display/src/my_draw_line.c		\
 		display/src/my_put_pixel.c		\
-		display/src/display_utils.c
+		display/src/display_utils.c		\
+		display/src/window.c			\
+		display/src/sprites.c			\
+		display/src/set_structures.c
 
 OBJS	=	$(SRCS:.c=.o)
 
