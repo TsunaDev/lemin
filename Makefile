@@ -5,14 +5,14 @@
 ## Login   <anais.breant@epitech.eu>
 ## 
 ## Started on  Tue Apr  4 17:10:32 2017 anaisbrnt
-## Last update Thu Apr 27 14:40:23 2017 Anaïs Breant
+## Last update Sun Apr 30 04:53:09 2017 LaFleche
 ##
 
 NAME	=	lem_in
 
 CC	=	gcc -o
 
-CFLAGS	=	-W -Wall -Wextra -g
+CFLAGS	=	-Wall -Wextra
 CFLAGS	+=	-Iinclude
 
 SRCS	=	src/main.c				\
@@ -36,9 +36,12 @@ SRCS	=	src/main.c				\
 		src/parsing/stock_tun/fill_tab_tun.c	\
 		src/parsing/stock_tun/delete_double.c	\
 		pathfinding/create_tools.c		\
+		pathfinding/find_my_unique_path.c	\
+		pathfinding/first_step.c		\
 		pathfinding/find_all_path.c		\
 		pathfinding/my_linked_list_ft.c		\
 		pathfinding/my_cmp_int.c		\
+		pathfinding/my_initialization.c		\
 		pathfinding/get_tab_combination.c	\
 		display/src/display_shell.c
 
