@@ -5,12 +5,10 @@
 ## Login   <anais.breant@epitech.eu>
 ## 
 ## Started on  Tue Apr  4 17:10:32 2017 anaisbrnt
-## Last update Sun Apr 30 04:53:09 2017 LaFleche
+## Last update Sun Apr 30 16:09:26 2017 Martin Van Elslande
 ##
 
 NAME	=	lem_in
-
-CC	=	gcc -o
 
 CFLAGS	=	-Wall -Wextra
 CFLAGS	+=	-Iinclude
@@ -43,7 +41,8 @@ SRCS	=	src/main.c				\
 		pathfinding/my_cmp_int.c		\
 		pathfinding/my_initialization.c		\
 		pathfinding/get_tab_combination.c	\
-		display/src/display_shell.c
+		display/src/display_shell.c		\
+		display/src/display_utils.c
 
 OBJS	=	$(SRCS:.c=.o)
 
@@ -51,9 +50,12 @@ LDFLAGS	=	-Lsrc/lib_string -lstr
 
 all: $(NAME)
 
+debug:	CFLAGS += -ggdb3
+debug:	re
+
 $(NAME): $(OBJS)
 	make -C src/lib_string
-	$(CC) $(NAME) $(OBJS) $(LDFLAGS)
+	gcc -o $(NAME) $(OBJS) $(LDFLAGS)
 
 clean:
 	make -C src/lib_string clean
