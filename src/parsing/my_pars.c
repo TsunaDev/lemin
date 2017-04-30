@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Sun Apr 30 18:10:44 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 18:24:42 2017 Glenn Gabriel Irakiza
 */
 
 #include	"stock_tun.h"
@@ -46,6 +46,18 @@ static int	my_path_tun(t_room **room, int nbr_ants, char **arr)
   return (ret);
 }
 
+static int	create_rooom(t_room **room, char **arr)
+{
+  int		ret;
+
+  ret = 0;
+  my_create_room(room, arr, &ret);
+  if (ret == 84)
+    return (84);
+  my_sort_room(room);
+  return (ret);
+}
+
 int		my_pars(char **arr)
 {
   t_room	**room;
@@ -64,11 +76,9 @@ int		my_pars(char **arr)
   room = malloc(sizeof(t_room *) * size);
   if (room == NULL || arr == NULL)
     return (84);
-  ret = 0;
-  my_create_room(room, arr, &ret);
+  ret = create_rooom(room, arr);
   if (ret == 84)
     return (84);
-  my_sort_room(room);
   my_display_arr(arr, room);
   ret = my_path_tun(room, nbr_ants, arr);
   return (ret);
