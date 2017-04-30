@@ -5,11 +5,12 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Fri Apr 21 14:19:39 2017 Anaïs Breant
-** Last update Fri Apr 21 17:07:44 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 16:47:30 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>
 #include	"my_string.h"
+#include	"lemin.h"
 
 static int	compare_next_start_end(char **str, int *cpt_bis)
 {
@@ -34,38 +35,25 @@ static int	compare_next_start_end(char **str, int *cpt_bis)
 
 static void	my_stop_read(char **arr, int cpt)
 {
-  int		len;
-  int		i;
-
-  i = 0;
-  len = my_strlen_tab(arr);
   free(arr[cpt]);
   arr[cpt] = NULL;
-  while (i != len)
-    {
-      free(arr[cpt]);
-      cpt++;
-    }
 }
 
-int		my_stranger(char **arr)
+void		my_stranger(char **arr)
 {
   int		return_value;
+  int		cmp[2];
   int		cpt;
 
   cpt = 0;
   while (arr[cpt] != NULL)
     {
-      return_value = my_strcmp(arr[cpt], "##start");
-      if (return_value == 0)
+      cpt = skip_line_void(arr, cpt);
+      cmp[0] = my_strcmp(arr[cpt], "##start");
+      cmp[1] = my_strcmp(arr[cpt], "##end");
+      if (cmp[0] == 0 || cmp[1] == 0)
 	{
-	  return_value = compare_next_start_end(arr, &cpt);
-	  if (return_value == 1)
-	    my_stop_read(arr, cpt);
-	}
-      return_value = my_strcmp(arr[cpt], "##end");
-      if (return_value == 0)
-	{
+	  cpt = skip_line_void(arr, cpt);
 	  return_value = compare_next_start_end(arr, &cpt);
 	  if (return_value == 1)
 	    my_stop_read(arr, cpt);
@@ -73,5 +61,4 @@ int		my_stranger(char **arr)
       else
 	cpt++;
     }
-  return (0);
 }
