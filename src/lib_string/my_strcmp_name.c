@@ -1,11 +1,11 @@
 /*
-** my_strcmp_name.c for my_strcmp_name.c in /home/gaby/projet_Epitech/CPE/CPE_2016_corewar/asm/parsing
+** my_strcmp_name.c for my_strcmp_name.c in /home/gaby/projet_Epitech/CPE/CPE_2016_Lemin/src/lib_string
 ** 
 ** Made by Glenn Gabriel Irakiza
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
-** Started on  Wed Mar 29 13:17:33 2017 Glenn Gabriel Irakiza
-** Last update Wed Mar 29 13:19:15 2017 Glenn Gabriel Irakiza
+** Started on  Sun Apr 30 19:52:18 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 19:52:19 2017 Glenn Gabriel Irakiza
 */
 
 #include	"my_string.h"

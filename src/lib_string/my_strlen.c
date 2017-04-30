@@ -1,11 +1,11 @@
 /*
-** my_strlen.c for my_strlen.c in /home/gaby/projet_Epitech/CPE/CPE_2016_corewar/asm_corewar/lib_string
+** my_strlen.c for my_strlen.c in /home/gaby/projet_Epitech/CPE/CPE_2016_Lemin/src/lib_string
 ** 
 ** Made by Glenn Gabriel Irakiza
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
-** Started on  Sat Mar 25 16:36:59 2017 Glenn Gabriel Irakiza
-** Last update Fri Mar 31 13:48:36 2017 Glenn Gabriel Irakiza
+** Started on  Sun Apr 30 19:52:49 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 19:52:50 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>

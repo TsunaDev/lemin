@@ -1,11 +1,11 @@
 /*
-** my_epurstr.c for my_epurstr.c in /home/gaby/projet_Epitech/PSU/PSU_2016_my_exec
+** my_epurstr.c for my_epurstr.c in /home/gaby/projet_Epitech/CPE/CPE_2016_Lemin/src/lib_string/To_wordtab
 ** 
-** Made by Irakiz_g
-** Login   <glenn-gabriel.irakiza@epitech.eu@epitech.net>
+** Made by Glenn Gabriel Irakiza
+** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
-** Started on  Mon Jan  9 22:37:16 2017 Irakiz_g
-** Last update Tue Apr 25 15:46:25 2017 Glenn Gabriel Irakiza
+** Started on  Sun Apr 30 19:55:21 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 19:55:21 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>

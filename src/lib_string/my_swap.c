@@ -1,11 +1,11 @@
 /*
-** my_swap.c for my_swap.c in /home/gaby/projet_Epitech/CPE/CPE_2016_corewar/lib/string
+** my_swap.c for my_swap.c in /home/gaby/projet_Epitech/CPE/CPE_2016_Lemin/src/lib_string
 ** 
 ** Made by Glenn Gabriel Irakiza
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
-** Started on  Wed Mar 29 13:10:21 2017 Glenn Gabriel Irakiza
-** Last update Wed Mar 29 13:10:26 2017 Glenn Gabriel Irakiza
+** Started on  Sun Apr 30 19:53:57 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 19:53:58 2017 Glenn Gabriel Irakiza
 */
 
 void     my_swap_char(char *a, char *b)

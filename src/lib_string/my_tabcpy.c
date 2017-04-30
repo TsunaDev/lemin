@@ -1,11 +1,11 @@
 /*
-** my_tabcpy.c for my_tabcpy.c in /home/gaby/projet_Epitech/PSU/PSU_2016_my_sokoban
+** my_tabcpy.c for my_tabcpy.c in /home/gaby/projet_Epitech/CPE/CPE_2016_Lemin/src/lib_string
 ** 
-** Made by Irakiz_g
-** Login   <glenn-gabriel.irakiza@epitech.eu@epitech.net>
+** Made by Glenn Gabriel Irakiza
+** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
-** Started on  Wed Dec 14 15:12:43 2016 Irakiz_g
-** Last update Tue Mar 14 14:50:06 2017 Glenn Gabriel Irakiza
+** Started on  Sun Apr 30 19:54:08 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 19:54:09 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>

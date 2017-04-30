@@ -1,11 +1,11 @@
 /*
-** my_strdup.c for my_strdup.c in /home/gaby/projet_Epitech/PSU/tetris_PSU
+** my_strdup.c for my_strdup.c in /home/gaby/projet_Epitech/CPE/CPE_2016_Lemin/src/lib_string
 ** 
 ** Made by Glenn Gabriel Irakiza
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
-** Started on  Tue Feb 21 23:11:31 2017 Glenn Gabriel Irakiza
-** Last update Tue Mar 14 12:36:22 2017 Glenn Gabriel Irakiza
+** Started on  Sun Apr 30 19:52:25 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 19:52:36 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>

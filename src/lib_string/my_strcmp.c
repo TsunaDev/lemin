@@ -1,11 +1,11 @@
 /*
-** my_strcmp.c for my_strcmp.c in /home/gaby/projet_Epitech/PSU/PSU_2016_minishell1/src
+** my_strcmp.c for my_strcmp.c in /home/gaby/projet_Epitech/CPE/CPE_2016_Lemin/src/lib_string
 ** 
-** Made by Irakiz_g
-** Login   <glenn-gabriel.irakiza@epitech.eu@epitech.net>
+** Made by Glenn Gabriel Irakiza
+** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
-** Started on  Tue Jan 10 22:41:18 2017 Irakiz_g
-** Last update Fri Apr 21 08:57:40 2017 Glenn Gabriel Irakiza
+** Started on  Sun Apr 30 19:52:05 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 19:52:06 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>

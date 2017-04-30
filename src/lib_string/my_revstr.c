@@ -1,11 +1,11 @@
 /*
-** my_revstr.c for my_revstr.c in /home/gaby/projet_Epitech/CPE/CPE_2016_corewar/lib/string
+** my_revstr.c for my_revstr.c in /home/gaby/projet_Epitech/CPE/CPE_2016_Lemin/src/lib_string
 ** 
 ** Made by Glenn Gabriel Irakiza
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
-** Started on  Wed Mar 29 13:09:27 2017 Glenn Gabriel Irakiza
-** Last update Wed Mar 29 13:14:22 2017 Glenn Gabriel Irakiza
+** Started on  Sun Apr 30 19:51:27 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 19:51:28 2017 Glenn Gabriel Irakiza
 */
 
 #include	"my_string.h"
