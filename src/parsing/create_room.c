@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Tue Apr 25 16:31:39 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 12:06:44 2017 Glenn Gabriel Irakiza
 */
 
 #include	"my_string.h"
@@ -68,6 +68,13 @@ static int	skip_line_void(char **arr, int y)
   return (y);
 }
 
+static void	init_cmp_arr(int *cmp, char *str)
+{
+  cmp[0] = my_strcmp("##start", str);
+  cmp[1] = my_strcmp("##end", str);
+  cmp[2] = my_nb_words(str);  
+}
+
 int		my_create_room(t_room **room, char **arr)
 {
   int		cmp[3];
@@ -78,18 +85,20 @@ int		my_create_room(t_room **room, char **arr)
   while (arr[y[0]] != NULL)
     {
       y[0]++;
-      cmp[0] = my_strcmp("##start", arr[y[0]]);
-      cmp[1] = my_strcmp("##end", arr[y[0]]);
-      cmp[2] = my_nb_words(arr[y[0]]);
+      init_cmp_arr(cmp, arr[y[0]]);
       if ((cmp[0] == 0 || cmp[1] == 0) && arr[y[0] + 1] != NULL)
 	{
 	  y[0] = skip_line_void(arr, y[0]);
 	  room[y[1]] = my_init_room(arr[y[0]], cmp, y[1]);
+	  if (room[y[1]] == NULL)
+	    return (84);
 	  y[1]++;
 	}
       if (cmp[2] == 3)
 	{
 	  room[y[1]] = my_init_room(arr[y[0]], NULL, y[1]);
+	  if (room[y[1]] == NULL)
+	    return (84);
 	  y[1]++;
 	}
     }
