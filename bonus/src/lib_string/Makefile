@@ -5,7 +5,7 @@
 ## Login   <vincent.larcher@epitech.eu>
 ## 
 ## Started on  Sun Apr 30 13:21:54 2017 LaFleche
-## Last update Sun Apr 30 13:22:03 2017 LaFleche
+## Last update Sun Apr 30 22:46:15 2017 Martin Van Elslande
 ##
 
 NAME	=	libstr.a
@@ -34,8 +34,7 @@ SRC	=	my_isnum.c				\
 		To_wordtab/my_epurstr.c			\
 		To_wordtab/my_epurnchar_str.c		\
 		To_wordtab/my_strnchar_to_wordtab.c	\
-		To_wordtab/my_str_to_wordtab.c		\
-		To_wordtab/my_str_to_wordtab_hypen.c	\
+		To_wordtab/my_str_to_wordtab.c
 
 OBJS	=	$(SRC:.c=.o)
 
