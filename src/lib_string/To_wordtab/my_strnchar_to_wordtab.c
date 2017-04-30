@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
 ** Started on  Wed Apr  5 16:13:59 2017 Glenn Gabriel Irakiza
-** Last update Sun Apr 30 13:29:17 2017 LaFleche
+** Last update Sun Apr 30 16:33:29 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>
@@ -55,16 +55,18 @@ static int	my_epur_tab(char ***arr)
   i = 0;
   while ((*arr)[y] != NULL)
     {
-      tmp = my_epur_str((*arr)[y]);
-      if (tmp == NULL)
-	return (84);
       len = my_strlen((*arr)[y]);
-      free((*arr)[y]);
       if (len != 0)
 	{
+	  tmp = my_epur_str((*arr)[y]);
+	  if (tmp == NULL)
+	    return (84);
+	  free((*arr)[y]);
 	  (*arr)[i] = tmp;
 	  i++;
 	}
+      else
+	free((*arr)[y]);
       y++;
     }
   (*arr)[i] = NULL;

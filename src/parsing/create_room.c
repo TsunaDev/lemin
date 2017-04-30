@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Sun Apr 30 12:06:44 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 16:48:39 2017 Glenn Gabriel Irakiza
 */
 
 #include	"my_string.h"
@@ -54,34 +54,22 @@ static t_room	*my_init_room(char *str, int *type, int name)
   return (room);
 }
 
-static int	skip_line_void(char **arr, int y)
-{
-  int		len;
-
-  y++;
-  len = my_strlen(arr[y]);
-  while (len == 0)
-    {
-      y++;
-      len = my_strlen(arr[y]);
-    }
-  return (y);
-}
-
 static void	init_cmp_arr(int *cmp, char *str)
 {
   cmp[0] = my_strcmp("##start", str);
   cmp[1] = my_strcmp("##end", str);
-  cmp[2] = my_nb_words(str);  
+  cmp[2] = my_nb_words(str);
 }
 
-int		my_create_room(t_room **room, char **arr)
+int		my_create_room(t_room **room, char **arr, int end)
 {
   int		cmp[3];
   int		y[2];
 
   y[0] = 0;
   y[1] = 0;
+  if (end == 84)
+    return (8);
   while (arr[y[0]] != NULL)
     {
       y[0]++;
@@ -103,5 +91,6 @@ int		my_create_room(t_room **room, char **arr)
 	}
     }
   room[y[1]] = NULL;
+  my_sort_room(room, end);
   return (0);
 }

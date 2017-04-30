@@ -5,7 +5,7 @@
 ## Login   <vincent.larcher@epitech.eu>
 ## 
 ## Started on  Sun Apr 30 13:21:54 2017 LaFleche
-## Last update Sun Apr 30 13:22:03 2017 LaFleche
+## Last update Sun Apr 30 16:09:46 2017 Glenn Gabriel Irakiza
 ##
 
 NAME	=	libstr.a
@@ -39,7 +39,7 @@ SRC	=	my_isnum.c				\
 
 OBJS	=	$(SRC:.c=.o)
 
-INCLUDE	=	-I../../include/
+INCLUDE	=	-I../../include/ -g
 
 CFLAGS	=	-W -Wall -Wextra $(INCLUDE)
 

@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
 ** Started on  Sat Feb 25 16:47:51 2017 Glenn Gabriel Irakiza
-** Last update Mon Apr 10 10:23:16 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 16:23:48 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>
@@ -27,7 +27,8 @@ void		my_free_array(char **array)
   int		i;
 
   i = 0;
-  while (array[i] != NULL)
-    free(array[i++]);
+  if (array != NULL)
+    while (array[i] != NULL)
+      free(array[i++]);
   free(array);
 }

@@ -5,28 +5,32 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
 ** Started on  Fri Apr 21 12:09:47 2017 Glenn Gabriel Irakiza
-** Last update Thu Apr 27 14:09:59 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 16:18:54 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>
 #include	"lemin.h"
 
-static void	my_swap_room(t_room **a, t_room **b)
+static void	my_swap_room(t_room **a, t_room **b, int start_end)
 {
   t_room	*tmp;
 
+  if (start_end != 0)
+    return ;
   tmp = *a;
   *a = *b;
   *b = tmp;
 }
 
-void		change_type_name(t_room **room)
+static void	change_type_name(t_room **room, int start_end)
 {
   int		i;
   int		name;
 
   i = 0;
   name = 0;
+  if (start_end != 0)
+    return ;
   while (room[i] != NULL)
     {
       if (room[i]->type != 0 && name == 0)
@@ -39,11 +43,13 @@ void		change_type_name(t_room **room)
     }
 }
 
-void		my_sort_room(t_room **room)
+void		my_sort_room(t_room **room, int start_end)
 {
   int		i;
 
   i = 0;
+  if (start_end != 0)
+    return ;
   if (room == NULL)
     return ;
   while (room[i] != NULL)
@@ -52,7 +58,7 @@ void		my_sort_room(t_room **room)
 	{
 	  if (room[i]->type > room[i + 1]->type)
 	    {
-	      my_swap_room(&room[i], &room[i + 1]);
+	      my_swap_room(&room[i], &room[i + 1], start_end);
 	      i = 0;
 	    }
 	  else
@@ -61,5 +67,5 @@ void		my_sort_room(t_room **room)
       else
 	i++;
     }
-  change_type_name(room);
+  change_type_name(room, start_end);
 }
