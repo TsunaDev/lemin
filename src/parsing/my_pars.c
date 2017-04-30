@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Sun Apr 30 18:00:40 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 18:10:44 2017 Glenn Gabriel Irakiza
 */
 
 #include	"stock_tun.h"
@@ -24,14 +24,33 @@ static int	nb_of_rooms(t_room **room)
   return (i);
 }
 
+static void	my_display_arr(char **arr, t_room **room)
+{
+  arr = check_nbr_room(room, arr);
+  display_arr(arr);
+  suppr_double_tun(arr);
+}
+
+static int	my_path_tun(t_room **room, int nbr_ants, char **arr)
+{
+  int		**paths;
+  int		**tab_tun;
+  int		nb_room;
+  int		ret;
+
+  nb_room = nb_of_rooms(room);
+  tab_tun = create_tab_int(room, arr);
+  ret = pathfinding(tab_tun, tab_tun[0][0], nb_room, &paths);
+  if (ret == 0)
+    display_shell(paths, room, nbr_ants);
+  return (ret);
+}
+
 int		my_pars(char **arr)
 {
-  int		nbr_ants;
   t_room	**room;
-  int		**tab_tun;
-  int		status_room;
+  int		nbr_ants;
   int		size;
-  int		**paths;
   int		ret;
 
   if (arr == NULL)
@@ -45,17 +64,12 @@ int		my_pars(char **arr)
   room = malloc(sizeof(t_room *) * size);
   if (room == NULL || arr == NULL)
     return (84);
-  status_room = 0;
-  my_create_room(room, arr, &status_room);
-  if (status_room == 84)
+  ret = 0;
+  my_create_room(room, arr, &ret);
+  if (ret == 84)
     return (84);
   my_sort_room(room);
-  arr = check_nbr_room(room, arr);
-  display_arr(arr);
-  suppr_double_tun(arr);
-  tab_tun = create_tab_int(room, arr);
-  ret = pathfinding(tab_tun, tab_tun[0][0], nb_of_rooms(room), &paths);
-  if (ret == 0)
-    display_shell(paths, room, nbr_ants);
+  my_display_arr(arr, room);
+  ret = my_path_tun(room, nbr_ants, arr);
   return (ret);
 }
