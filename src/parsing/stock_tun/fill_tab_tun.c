@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Fri Apr 21 19:20:12 2017 Anaïs Breant
-** Last update Wed Apr 26 09:21:10 2017 Martin Van Elslande
+** Last update Sun Apr 30 12:15:35 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>
@@ -56,5 +56,4 @@ void		fill_tab_tun(char **arr, int **tun, int cpt_arr, t_room **room)
 	}
       cpt_arr++;
     }
-  //  delete_double(tun);
 }
