@@ -5,10 +5,9 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu@epitech.net>
 ** 
 ** Started on  Thu Dec 29 19:04:04 2016 Irakiz_g
-** Last update Fri Apr 28 14:38:58 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 13:24:54 2017 LaFleche
 */
 
-#include	<stdio.h>
 #include	<stdlib.h>
 #include	"my_string.h"
 

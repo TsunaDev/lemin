@@ -1,11 +1,11 @@
 ##
-## Makefile for make in /home/irakiz_g/delivery/PSU_2021_my_printf
+## Makefile for Lemin in /home/lafleche/norm3/CPE_2016_Lemin
 ## 
-## Made by gabriel irakiza
-## Login   <irakiz_g@epitech.net>
+## Made by LaFleche
+## Login   <vincent.larcher@epitech.eu>
 ## 
-## Started on  Mon Nov  7 10:40:19 2016 gabriel irakiza
-## Last update Sat Apr 29 16:28:10 2017 Martin Van Elslande
+## Started on  Sun Apr 30 13:21:54 2017 LaFleche
+## Last update Sun Apr 30 13:22:03 2017 LaFleche
 ##
 
 NAME	=	libstr.a
@@ -41,7 +41,7 @@ OBJS	=	$(SRC:.c=.o)
 
 INCLUDE	=	-I../../include/
 
-CFLAGS	=	-W -Wall -Wextra -ansi -pedantic $(INCLUDE)
+CFLAGS	=	-W -Wall -Wextra $(INCLUDE)
 
 all: $(NAME)
 

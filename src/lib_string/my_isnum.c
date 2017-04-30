@@ -5,11 +5,11 @@
 ** Login   <irakiz_g@epitech.net>
 ** 
 ** Started on  Wed Nov  9 17:35:21 2016 gabriel irakiza
-** Last update Fri Feb 24 14:19:20 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 13:37:17 2017 LaFleche
 */
 
 #include	<stdlib.h>
-#include	<stdio.h>
+#include	"my_string.h"
 
 int		my_isnum(char *str)
 {

@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu@epitech.net>
 **
 ** Started on  Thu Dec  1 10:52:14 2016 Irakiz_g
-** Last update Sun Apr  2 15:45:02 2017 Quentin Le Bars
+** Last update Sun Apr 30 13:38:51 2017 LaFleche
 */
 
 #include	<stdlib.h>
@@ -33,7 +33,8 @@ char		*my_strcat(char *src, char *dest, int y)
 
   i = 0;
   len = my_strlen(dest) + my_strlen(src) + 1;
-  if ((new = malloc(sizeof(char) * len)) == NULL)
+  new = malloc(sizeof(char) * len);
+  if (new == NULL)
     return (NULL);
   if (src)
     i = my_cpy(src, new, i);
