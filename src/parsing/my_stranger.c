@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Fri Apr 21 14:19:39 2017 Anaïs Breant
-** Last update Fri Apr 21 15:41:34 2017 Anaïs Breant
+** Last update Fri Apr 21 17:07:44 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>
@@ -32,6 +32,22 @@ static int	compare_next_start_end(char **str, int *cpt_bis)
   return (0);
 }
 
+static void	my_stop_read(char **arr, int cpt)
+{
+  int		len;
+  int		i;
+
+  i = 0;
+  len = my_strlen_tab(arr);
+  free(arr[cpt]);
+  arr[cpt] = NULL;
+  while (i != len)
+    {
+      free(arr[cpt]);
+      cpt++;
+    }
+}
+
 int		my_stranger(char **arr)
 {
   int		return_value;
@@ -45,14 +61,14 @@ int		my_stranger(char **arr)
 	{
 	  return_value = compare_next_start_end(arr, &cpt);
 	  if (return_value == 1)
-	    arr[cpt] = NULL;
+	    my_stop_read(arr, cpt);
 	}
       return_value = my_strcmp(arr[cpt], "##end");
       if (return_value == 0)
 	{
 	  return_value = compare_next_start_end(arr, &cpt);
 	  if (return_value == 1)
-	    arr[cpt] = NULL;
+	    my_stop_read(arr, cpt);
 	}
       else
 	cpt++;
