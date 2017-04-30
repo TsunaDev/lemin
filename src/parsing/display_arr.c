@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 19 16:06:54 2017 Anaïs Breant
-** Last update Wed Apr 26 17:19:25 2017 Anaïs Breant
+** Last update Sun Apr 30 20:17:36 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>
@@ -35,6 +35,7 @@ static int	check_tunnel(char *str, int cpt_tunnel)
 static int	check_room(char *str, int cpt_room)
 {
   int		nbr_space;
+  int		cmp[2];
   int		cpt;
 
   cpt = 0;
@@ -45,7 +46,9 @@ static int	check_room(char *str, int cpt_room)
 	nbr_space++;
       cpt++;
     }
-  if (nbr_space == 2 && cpt_room == 0)
+  cmp[0] = my_strcmp(str, "##start");
+  cmp[1] = my_strcmp(str, "##end");
+  if ((nbr_space == 2 && cpt_room == 0) || cmp[0] == 0 || cmp[1] == 0)
     {
       my_putstr(1, "#rooms\n");
       return (0);

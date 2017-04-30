@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:25:21 2017 Glenn Gabriel Irakiza
-** Last update Sun Apr 30 17:53:25 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 20:05:40 2017 Glenn Gabriel Irakiza
 */
 
 #ifndef			LEMIN_H_
@@ -39,6 +39,7 @@ char			**open_file(int);
 int			my_pars(char **);
 int			nb_room(char **);
 int			display_shell(int **, t_room **, int);
+int			skip_line_void(char **, int);
 
 int			next_room(int, int *);
 int			init_state(t_state *, int);

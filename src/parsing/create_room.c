@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Sun Apr 30 17:51:55 2017 Glenn Gabriel Irakiza
+** Last update Sun Apr 30 20:05:56 2017 Glenn Gabriel Irakiza
 */
 
 #include	"my_string.h"
@@ -57,7 +57,7 @@ static t_room	*my_init_room(char *str, int *type, int name, int *status)
   return (room);
 }
 
-static int	skip_line_void(char **arr, int y)
+int		skip_line_void(char **arr, int y)
 {
   int		len;
 
