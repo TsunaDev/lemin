@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:25:21 2017 Glenn Gabriel Irakiza
-** Last update Sun Apr 30 16:11:13 2017 Martin Van Elslande
+** Last update Sun Apr 30 17:53:25 2017 Glenn Gabriel Irakiza
 */
 
 #ifndef			LEMIN_H_
@@ -33,7 +33,7 @@ typedef struct		s_state
 void			my_sort_room(t_room **);
 void			suppr_double_tun(char **);
 void			my_free_room(t_room **);
-int			my_create_room(t_room **, char **);
+void			my_create_room(t_room **, char **, int *);
 
 char			**open_file(int);
 int			my_pars(char **);
