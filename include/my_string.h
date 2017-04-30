@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Sun Mar 12 12:04:03 2017 Glenn Gabriel Irakiza
-** Last update Sat Apr 29 16:35:41 2017 Martin Van Elslande
+** Last update Sun Apr 30 19:58:14 2017 Glenn Gabriel Irakiza
 */
 
 #ifndef	MY_STRING_H_
@@ -35,7 +35,6 @@ char		*to_wordtab_to_str(char **, int, int);
 char		**my_tab_cpy(char **);
 char		**my_strnchar_to_wordtab(char *, char);
 char		**my_str_to_wordtab(char *);
-char		**my_str_to_wordtab_hyphen(char *);
 
 int		my_strlen_char(char **);
 int		my_strlen_tab(char **);
