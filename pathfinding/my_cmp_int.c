@@ -5,10 +5,9 @@
 ** Login   <vincent.larcher@epitech.eu>
 ** 
 ** Started on  Sun Apr 23 15:10:04 2017 LaFleche
-** Last update Sat Apr 29 01:03:50 2017 LaFleche
+** Last update Sun Apr 30 01:38:36 2017 LaFleche
 */
 
-#include <stdlib.h>
 #include "pathfinding.h"
 
 int		*my_cp_tab(int *src, int *dest)
@@ -16,8 +15,6 @@ int		*my_cp_tab(int *src, int *dest)
   int		i;
 
   i = 0;
-  //  length = tab_intlen(src) + 1;
-  //dest = clean_tab(dest, length);
   while (src[i] != -1)
     {
       dest[i] = src[i];
@@ -53,12 +50,10 @@ int		tab_intlen(int *tab)
 
 int		int_tab_cmp(int *tab, int *tab2)
 {
-  int		i, x;
+  int		i;
+  int		x;
 
   i = 0;
-  ///  opt = (tab_intlen(tab) >= tab_intlen(tab2)) ? (0) : (1);
-  //if (opt == 0)
-  //{
   while (tab[i] != -1)
     {
       x = 0;
@@ -72,15 +67,5 @@ int		int_tab_cmp(int *tab, int *tab2)
 	}
       i++;
     }
-  /*}
-  if (opt == 1)
-    {
-      while (tab2[i] != -1)
-	{
-	  if (tab[i] == tab2[i] && tab[i] != 0 && tab[i] != 1)
-	    return (1);
-	  i++;
-	}
-	}*/
   return (0);
 }

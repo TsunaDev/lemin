@@ -5,7 +5,7 @@
 ** Login   <vincent.larcher@epitech.eu>
 ** 
 ** Started on  Sat Apr 22 14:38:09 2017 LaFleche
-** Last update Sat Apr 29 20:35:21 2017 LaFleche
+** Last update Sun Apr 30 04:21:10 2017 LaFleche
 */
 
 #include <stdlib.h>
@@ -59,7 +59,6 @@ static int		**fill_my_tools(int **tools, int nb_rooms, int nb_pipes, int **tab)
   int		size;
 
   i = 0;
-  //  printf("--start tools\n");
   while (i != nb_rooms)
     {
       size = my_malloc_size(i, nb_pipes, tab) + 1;
@@ -70,14 +69,9 @@ static int		**fill_my_tools(int **tools, int nb_rooms, int nb_pipes, int **tab)
       tools[i][size - 1] = -1;
       j = 0;
       while (tools[i][j] != -1)
-	{
-	  //  printf("%d ", tools[i][j]);
-	  j++;
-	}
-      //  printf("\n");
+	j++;
       i++;
     }
-  //  printf("--end tools\n");
   return (tools);
 }
 
@@ -94,40 +88,26 @@ static int		**create_tools(int nb_rooms, int nb_pipes, int **tab)
   return (tools);
 }
 
-int		**pathfinding(int **tab_pipes, int nb_pipes, int nb_rooms)
+int		pathfinding(int **tab_pipes, int nb_pipes, int nb_rooms, int ***paths)
 {
-  int		**tools;
-  int		**ret;
+  t_pathf	*pathf;
+  int		ret;
 
   if (tab_pipes == NULL || nb_pipes == 0 || nb_rooms == 0)
-    exit(0);
-  int x, i = 1;
-  tools = create_tools(nb_rooms, nb_pipes, tab_pipes);
-  if (tools == NULL)
-    return (NULL);
-  if (tools[0][0] == -1) //////////////////////////
-    exit(0);
-  if (tools[1][0] == -1) //////////////////////////
-    exit(0);
-  //  exit(0);
-  ///printf("\n");
-  ret = find_all_path(tools, nb_rooms, nb_pipes);
-  if (ret == NULL)
-    return (NULL);
-  //printf("\n\n---->%d\n", ret[0][0]);
-  while (ret[i] != NULL)//(i != (ret[0][0] + 1))
-    {
-      /* x = 0;
-      while (ret[i][x] != -1)
-	{
-	  printf("%d ", ret[i][x]);
-	  x++;
-	}
-	printf("\n");*/
-      i++;
-    }
-  ret[0][0] = i - 1;
-  //  printf("\n\n---->%d\n", ret[0][0]);
-  //exit(0);
-  return (ret);
+    return (-1);
+  pathf = malloc(sizeof(*pathf));
+  if (pathf == NULL)
+    return (84);
+  pathf->tools = create_tools(nb_rooms, nb_pipes, tab_pipes);
+  if (pathf->tools == NULL || pathf->tools[0][0] == -1
+      || pathf->tools[1][0] == -1)
+    return (84);
+  pathf->nb_rooms = nb_rooms;
+  pathf->nb_pipes = nb_pipes;
+  pathf->limit = 0;
+  ret = find_all_path(pathf);
+  if (ret == 84 || ret == -1)
+    return (ret);
+  (*paths) = pathf->final_path;
+  return (0);
 }

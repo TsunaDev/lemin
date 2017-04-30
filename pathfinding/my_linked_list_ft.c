@@ -5,7 +5,7 @@
 ** Login   <vincent.larcher@epitech.eu>
 ** 
 ** Started on  Sat Apr 22 20:49:30 2017 LaFleche
-** Last update Sat Apr 29 12:53:19 2017 LaFleche
+** Last update Sun Apr 30 04:18:46 2017 LaFleche
 */
 
 #include <stdlib.h>
@@ -40,8 +40,6 @@ int		del_last_node(t_list *list)
   else
     {
       tmp = list->tail->prev;
-      //if (opt == 0)
-      //free(list->tail->path);
       free(list->tail);
       list->tail = tmp;
       list->tail->next = NULL;
@@ -49,54 +47,10 @@ int		del_last_node(t_list *list)
   return (0);
 }
 
-static int	*init_tab(int *tab, int length)
+static int	add_node_to_all_path(t_list *all_path)
 {
-  int		i;
-
-  i = 0;
-  tab = malloc(sizeof(int) * (length));
-  if (tab == NULL)
-    return (NULL);
-  while (i != (length - 1))
-    {
-      tab[i] = -1;
-      i++;
-    }
-  return (tab);
-}
-
-/*int             add_node_beginning(t_list *list, int length)
-{
-  t_node        *new_node;
-  t_node        *tmp;
-
-  new_node = malloc(sizeof(*new_node));
-  if (new_node == NULL)
-    return (84);
-  new_node->path = init_tab(new_node->path, length);
-  if (new_node->path == NULL)
-    return (84);
-  new_node->prev = NULL;
-  if (list->head == NULL)
-    {
-      list->head = new_node;
-      list->tail = new_node;
-      new_node->prev = NULL;
-    }
-  else
-    {
-      tmp = list->head;
-      new_node->next = list->head;
-      list->head = new_node;
-      tmp->prev= list->head;
-    }
-  return (0);
-  }*/
-
-int             add_node_end2(t_list *all_path, t_list *list, int length)
-{
-  t_node        *new_node;
-  t_node        *tmp;
+  t_node	*new_node;
+  t_node	*tmp;
 
   new_node = malloc(sizeof(*new_node));
   if (new_node == NULL)
@@ -118,20 +72,19 @@ int             add_node_end2(t_list *all_path, t_list *list, int length)
   return (0);
 }
 
-int		my_push_to_list_all_path(t_list *list, t_list *all_path, int length)
+int		my_push_to_list_all_path(t_list *list, t_list *all_path)
 {
   int		ret;
 
-  ret = add_node_end2(all_path, list, length);
+  ret = add_node_to_all_path(all_path);
   if (ret == 84)
     return (84);
-  //free(all_path->tail->path);
   all_path->tail->path = list->tail->path;
   del_last_node(list);
   return (0);
 }
 
-int             add_node_end(t_list *list, int length)
+int		add_node_end(t_list *list, int length)
 {
   t_node        *new_node;
   t_node        *tmp;

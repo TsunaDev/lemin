@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Sat Apr 29 15:36:43 2017 Martin Van Elslande
+** Last update Sun Apr 30 04:32:19 2017 LaFleche
 */
 
 #include	"stock_tun.h"
@@ -14,13 +14,7 @@
 #include	"my_string.h"
 #include	"pathfinding.h"
 
-/*
-** Toujours afficher même si le nbr fourmis n'est pas bon
-** check si on doit skip ou arrêter la ligne pour le nbr de fourmis
-** pas bon
-*/
-
-static int	nb_rooms(t_room **room)
+static int	nb_of_rooms(t_room **room)
 {
   int		i;
 
@@ -30,20 +24,6 @@ static int	nb_rooms(t_room **room)
   return (i);
 }
 
-static void	diplay_tun(int **tab)
-{
-  int		cpt;
-
-  cpt = 1;
-  printf("%d\n", tab[0][0]);
-  while (cpt <= tab[0][0])
-    {
-      printf("(%d-", tab[cpt][0]);
-      printf("%d)\n", tab[cpt][1]);
-      cpt++;
-    }
-}
-
 int		my_pars(char **arr)
 {
   int		nbr_ants;
@@ -51,6 +31,7 @@ int		my_pars(char **arr)
   int		**tab_tun;
   int		size;
   int		**paths;
+  int		ret;
 
   if (arr == NULL)
     return (84);
@@ -69,9 +50,8 @@ int		my_pars(char **arr)
   display_arr(arr);
   suppr_double_tun(arr);
   tab_tun = create_tab_int(room, arr);
-  // diplay_tun(tab_tun);
-  paths = pathfinding(tab_tun, tab_tun[0][0], nb_rooms(room));
-  //  exit(0);
-  display_shell(paths, room, nbr_ants);
-  return (0);
+  ret = pathfinding(tab_tun, tab_tun[0][0], nb_of_rooms(room), &paths);
+  if (ret == 0)
+    display_shell(paths, room, nbr_ants);
+  return (ret);
 }
