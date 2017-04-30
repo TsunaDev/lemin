@@ -5,7 +5,7 @@
 ** Login   <vincent.larcher@epitech.eu>
 ** 
 ** Started on  Sat Apr 22 14:38:09 2017 LaFleche
-** Last update Sun Apr 30 04:21:10 2017 LaFleche
+** Last update Sun Apr 30 16:28:28 2017 LaFleche
 */
 
 #include <stdlib.h>
@@ -29,7 +29,7 @@ static int		my_malloc_size(int num_room, int nb_pipes, int **tab)
   return (size);
 }
 
-static int		*fill_one_tool(int *tool, int nb_pipes, int num_room, int **tab)
+static int     	*fill_one_tool(int *tool, int nb_pipes, int num_room, int **tab)
 {
   int		j;
   int		i;
@@ -53,7 +53,7 @@ static int		*fill_one_tool(int *tool, int nb_pipes, int num_room, int **tab)
   return (tool);
 }
 
-static int		**fill_my_tools(int **tools, int nb_rooms, int nb_pipes, int **tab)
+static int	**fill_my_tools(int **tools, int nb_rooms, int nb_pipes, int **tab)
 {
   int		i, j;
   int		size;
@@ -75,7 +75,7 @@ static int		**fill_my_tools(int **tools, int nb_rooms, int nb_pipes, int **tab)
   return (tools);
 }
 
-static int		**create_tools(int nb_rooms, int nb_pipes, int **tab)
+static int	**create_tools(int nb_rooms, int nb_pipes, int **tab)
 {
   int		**tools;
 
@@ -88,7 +88,8 @@ static int		**create_tools(int nb_rooms, int nb_pipes, int **tab)
   return (tools);
 }
 
-int		pathfinding(int **tab_pipes, int nb_pipes, int nb_rooms, int ***paths)
+int		pathfinding(int **tab_pipes, int nb_pipes,
+			    int nb_rooms, int ***paths)
 {
   t_pathf	*pathf;
   int		ret;

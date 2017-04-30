@@ -5,7 +5,7 @@
 ** Login   <vincent.larcher@epitech.eu>
 ** 
 ** Started on  Sat Apr 22 19:19:26 2017 LaFleche
-** Last update Sun Apr 30 04:10:31 2017 LaFleche
+** Last update Sun Apr 30 16:29:15 2017 LaFleche
 */
 
 #include <stdlib.h>
@@ -80,7 +80,8 @@ static int	next_steps(t_list *list, t_list *all_path, t_pathf *pathf)
   return (0);
 }
 
-static int	lets_find_all_path(t_list *list, t_list *all_path, t_pathf *pathf)
+static int	lets_find_all_path(t_list *list, t_list *all_path,
+				   t_pathf *pathf)
 {
   int		ret;
 
