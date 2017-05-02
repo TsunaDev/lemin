@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Wed Apr 12 19:34:56 2017 Anaïs Breant
-** Last update Sat Apr 29 15:32:20 2017 Glenn Gabriel Irakiza
+** Last update Tue May  2 11:17:06 2017 Glenn Gabriel Irakiza
 */
 
 #include	<unistd.h>
@@ -85,10 +85,7 @@ void		suppr_double_tun(char **arr)
 	    {
 	      cmp = my_strcmp_rev(arr[y[1]], arr[y[0]]);
 	      if (cmp == 0)
-		{
-		  free(arr[y[0]]);
-		  arr[y[0]] = my_strdup("");
-		}
+		arr[y[0]] = my_strdup("");
 	    }
 	  y[1]++;
 	}

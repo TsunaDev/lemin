@@ -5,7 +5,7 @@
 ** Login   <anais.breant@epitech.eu>
 **
 ** Started on  Fri Apr 21 14:19:39 2017 Anaïs Breant
-** Last update Sun Apr 30 21:04:13 2017 Glenn Gabriel Irakiza
+** Last update Tue May  2 11:21:33 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>
@@ -19,7 +19,7 @@ static int	compare_next_start_end(char **str, int *cpt_bis)
   cpt = 0;
   cpt_space = 0;
   (*cpt_bis)++;
-  if (str[*cpt_bis] != NULL)
+  if (str[*cpt_bis] != NULL && my_strlen(str[*cpt_bis]) != 0)
     {
       while (str[*cpt_bis][0] == '\0')
 	(*cpt_bis)++;
