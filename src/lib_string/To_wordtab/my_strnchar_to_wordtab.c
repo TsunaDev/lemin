@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 ** 
 ** Started on  Sun Apr 30 19:55:36 2017 Glenn Gabriel Irakiza
-** Last update Sun Apr 30 19:55:37 2017 Glenn Gabriel Irakiza
+** Last update Tue May  2 11:40:56 2017 Glenn Gabriel Irakiza
 */
 
 #include	<stdlib.h>
@@ -44,7 +44,8 @@ static int	nb_char_in_words_env(char *str, int pos, char cmp)
   return (b);
 }
 
-static int	my_epur_tab(char ***arr)
+int		my_epur_tab(char ***arr)
+
 {
   char		*tmp;
   int		y;
@@ -56,15 +57,16 @@ static int	my_epur_tab(char ***arr)
   while ((*arr)[y] != NULL)
     {
       tmp = my_epur_str((*arr)[y]);
+      len = my_strlen((*arr)[y]);
       if (tmp == NULL)
 	return (84);
-      len = my_strlen((*arr)[y]);
-      free((*arr)[y]);
       if (len != 0)
 	{
 	  (*arr)[i] = tmp;
 	  i++;
 	}
+      else
+	free(tmp);
       y++;
     }
   (*arr)[i] = NULL;

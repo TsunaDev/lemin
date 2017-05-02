@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Mon Apr 10 14:28:50 2017 Glenn Gabriel Irakiza
-** Last update Sun Apr 30 18:24:42 2017 Glenn Gabriel Irakiza
+** Last update Tue May  2 11:38:17 2017 Glenn Gabriel Irakiza
 */
 
 #include	"stock_tun.h"
@@ -71,6 +71,7 @@ int		my_pars(char **arr)
   if (nbr_ants == -1)
     return (1);
   arr = skip_bad_line(arr);
+  my_epur_tab(&arr);
   my_valid_file(arr);
   size = nb_room(arr) + 1;
   room = malloc(sizeof(t_room *) * size);
