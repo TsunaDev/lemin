@@ -5,7 +5,7 @@
 ** Login   <glenn-gabriel.irakiza@epitech.eu>
 **
 ** Started on  Tue Apr 18 08:49:42 2017 Glenn Gabriel Irakiza
-** Last update Thu Apr 20 09:39:38 2017 Glenn Gabriel Irakiza
+** Last update Tue May  2 11:19:18 2017 Glenn Gabriel Irakiza
 */
 
 #include	"check_file.h"
@@ -67,10 +67,7 @@ int		my_valid_file(char **arr)
       free(arr[y]);
       arr[y] = NULL;
       while (y != len)
-	{
-	  free(arr[y]);
-	  y++;
-	}
+	y++;
     }
   my_stranger(arr);
   return (0);
